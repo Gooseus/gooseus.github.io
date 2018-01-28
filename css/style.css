@@ -599,7 +599,9 @@ nav a:hover, footer a:hover {
 }
 nav a.active { text-decoration: underline; color: #000; }
 
-.to-head { float: right; }
+.pull-right { float: right; }
+.nostyle-anchor { text-decoration: none; }
+.nostyle-anchor:focus { border: 0; outline: 0; }
 
 aside ul { list-style: circle; }
 
