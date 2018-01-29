@@ -543,13 +543,14 @@ code {
 }
 
 
-/*! Goose.us styles */
+/*! Gooseus styles */
 html { font-size: 120%;  }
 body { margin: 1rem; }
 header { text-align: center; }
 header, main, footer, aside { 
-	margin: 0 auto; width:
-	800px;
+	margin: 0 auto;
+	width: 800px;
+	margin-bottom: 30px;
 }
 
 h1, h2 { 
@@ -561,6 +562,7 @@ h3 { font-size: 1.25rem; }
 
 header h1 { margin: 0; padding: 0; }
 
+header nav { margin-top: 10px; }
 nav ul{
   list-style: none;
   margin: 0 2px;
