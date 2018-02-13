@@ -6,9 +6,29 @@
     <description>Recent content on A Thoughtful Goose</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 26 Jan 2018 14:08:22 -0800</lastBuildDate>
     
 	<atom:link href="https://goose.us/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>https://goose.us/about/</link>
+      <pubDate>Fri, 26 Jan 2018 14:08:22 -0800</pubDate>
+      
+      <guid>https://goose.us/about/</guid>
+      <description>The Author I am Shawn Marincas, Gooseus is my online alias and pen name (pronounced &amp;ldquo;goosey-yus&amp;rdquo;). It&amp;rsquo;s a Latinized version of my HS nickname (which was not a reference to Top Gun) which I adapted for myself in college after watching Gladiator and needing an Xbox Live handle.
+I&amp;rsquo;m originally from Brick, New Jersey and am now a resident of Portland, Oregon. My only formal education is a Bachelor of Computer Engineering from Stevens Institute of Technology and I&amp;rsquo;m employed full-time as a web developer (or fullstack engineer, or whatever the trending title is).</description>
+    </item>
+    
+    <item>
+      <title>The Purpose of Life</title>
+      <link>https://goose.us/thoughts/the-purpose-of-life/</link>
+      <pubDate>Thu, 25 Jan 2018 05:03:57 -0800</pubDate>
+      
+      <guid>https://goose.us/thoughts/the-purpose-of-life/</guid>
+      <description>This Isn&amp;rsquo;t About You So lets start by being clear with what I mean by &amp;ldquo;purpose for Life&amp;rdquo;. What I&amp;rsquo;m referring to is the chemical process we call Life, the one that would be observable from some outside being if they were to come across Earth. Just like we&amp;rsquo;re currently looking for something we can call Life on exoplanets. That&amp;rsquo;s Life with the capital &amp;lsquo;L&amp;rsquo;, and it includes your life and every other life on the planet.</description>
+    </item>
     
   </channel>
 </rss>
