@@ -5,12 +5,12 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-	<title>A Thoughtful Goose | Thinking about all of the things worth thinking about</title>
+	<title>A Thoughtful Goose | </title>
 
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<link rel="stylesheet" href="https://goose.us/css/style.min.css?t=1526888640">
+	<link rel="stylesheet" href="https://goose.us/css/style.min.css?t=-62135596800">
 	<link href="https://goose.us/index.xml" rel="feed" type="application/rss+xml" title="A Thoughtful Goose">
 	<meta name="generator" content="Hugo 0.34" />
 	
@@ -31,27 +31,22 @@
 		</nav>
 	</header>
 	<main>
-		<p>Hello world, welcome to my website.</p>
-		<p>It's where I write about the things I think about.  If you dig knowledge and believe that science is a real method for discovering the true nature of reality, I think we can be friends.</p>
-	
-	
-	</main>
-	<aside>
 		<div>
 			<div>
-				<h3>Recent Thoughts</h3>
+				<h3>All The Thoughts</h3>
 			</div>
 			<div>
 				<ul>
 					
-					<li><a href="https://goose.us/thoughts/masculine-and-feminine-aspects/">Masculine and Feminine Aspects and Roles</a><br />Wherein I attempt a synthesis between traditional gender roles and New Age ideas of masculine and feminine energy.</li>
+					<li><a href="https://goose.us/thoughts/masculine-and-feminine/">Masculine and Feminine</a><br />Wherein I attempt a synthesis between traditional gender roles and New Age ideas of masculine and feminine energy.</li>
 					
 					<li><a href="https://goose.us/thoughts/the-purpose-of-life/">The Purpose of Life</a><br />Wherein I leverage the work of Sean Carroll, MinutePhysics and MinuteEarth to propose a new purpose of life.</li>
 					
 				</ul>
 			</div>
 		</div>
-	</aside>
+
+	</main>
 
 	<footer id="footer">
 		<p> <a href="https://goose.us/">A Thoughtful Goose</a> is <a target="_blank" href="/LICENSE.txt">licensed</a> under <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> | <a target="_blank" href="https://keybase.io/">Keybase</a> | <a target="_blank" href="https://twitter.com/">Twitter</a> | <a target="_blank" href="https://reddit.com/r/">Reddit</a></p>
@@ -75,6 +70,23 @@
 
 			this.appendChild(iframe);
 			this.classList.remove("dim-hover");
+		}
+
+		function yt_lt_setup() {
+			var div, n,
+				v = document.getElementsByClassName("youtube-player"),
+				l = v.length;
+
+			for (n = 0; n < l; n++) {
+				v[n].onclick = yt_lt_iframe;
+			}
+		}
+
+		document.addEventListener("DOMContentLoaded", yt_lt_setup);
+	</script>
+</body>
+</html>
+List.remove("dim-hover");
 		}
 
 		function yt_lt_setup() {
