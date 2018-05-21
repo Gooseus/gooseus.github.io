@@ -86,3 +86,20 @@
 	</script>
 </body>
 </html>
+List.remove("dim-hover");
+		}
+
+		function yt_lt_setup() {
+			var div, n,
+				v = document.getElementsByClassName("youtube-player"),
+				l = v.length;
+
+			for (n = 0; n < l; n++) {
+				v[n].onclick = yt_lt_iframe;
+			}
+		}
+
+		document.addEventListener("DOMContentLoaded", yt_lt_setup);
+	</script>
+</body>
+</html>
