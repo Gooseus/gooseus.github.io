@@ -3,17 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://goose.us/thoughts/on-masculine-and-feminine-roles/</loc>
-    <lastmod>2018-05-21T08:30:00-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://goose.us/about/</loc>
     <lastmod>2018-02-19T11:40:00-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://goose.us/thoughts/on-the-purpose-of-life/</loc>
+    <loc>https://goose.us/ideas/</loc>
     <lastmod>2018-02-19T11:40:00-08:00</lastmod>
   </url>
   
@@ -48,14 +43,17 @@
   </url>
   
   <url>
+    <loc>https://goose.us/thoughts/something-something/</loc>
+  </url>
+  
+  <url>
     <loc>https://goose.us/</loc>
-    <lastmod>2018-05-21T08:30:00-08:00</lastmod>
+    <lastmod>2018-02-19T11:40:00-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://goose.us/thoughts/</loc>
-    <lastmod>2018-05-21T08:30:00-08:00</lastmod>
     <priority>0</priority>
   </url>
   
