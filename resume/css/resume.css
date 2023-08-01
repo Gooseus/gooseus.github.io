@@ -1,0 +1,221 @@
+/*------------------------------------*
+  RESET
+*------------------------------------*/
+body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+pre, form, fieldset, input, textarea,
+p, blockquote, th, td { 
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset, img {
+  border: 0;
+}
+address, caption, cite, dfn, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+caption, th {
+  text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+q:before, q:after {
+  content: '';
+}
+abbr, acronym {
+  border: 0;
+}
+/*------------------------------------*
+  MAIN
+*------------------------------------*/
+html {
+  font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+  background-color: #FAF9F6;
+  color: #3f3844;
+}
+
+body {
+  width: 940px;
+  margin: 0 auto;
+  line-height: 1.5em;
+  padding-top: 36px;
+}
+
+/*------------------------------------*
+  TYPE
+*------------------------------------*/
+/*--- HEADINGS ---*/
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+h2 {
+  font-size: 1.375em;
+  line-height: 1.0909em;
+}
+
+h3 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+}
+
+h4 {
+  font-size: 1.125em;
+  line-height: 1.333em;
+}
+
+h5, h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+/*--- PARAGRAPHS ---*/
+p {
+  margin-bottom: 24px;
+}
+
+p+p {
+  text-indent: 1em;
+  margin-top: -24px;
+}
+
+/*--- LISTS ---*/
+ul, ol {
+  margin-left: 17px;
+  margin-bottom: 24px;
+}
+
+ul {
+  list-style: square outside;
+}
+ul ul {
+  list-style: disc outside;
+}
+
+ul ul,
+ol ol {
+  margin: 0 0 0 60px;
+}
+
+/*--- QUOTES ---*/
+blockquote {
+  margin: 0 60px 0 45px;
+  border-left: 5px solid #ccc;
+  padding-left: 10px;
+  text-indent: -0.4em;
+}
+
+blockquote b {
+  display: block;
+  text-indent: 0;
+}
+
+/*--- LINKS ---*/
+a, link {
+  /* color: #09f; */
+  color: #084;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active,
+a:focus {
+  position: relative;
+  top: 1px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 45px;
+}
+article {
+  width: 68.75%;
+  min-height: 100vh;
+}
+aside {
+  width: 31.25%;
+  height: 100vh;
+  padding-left: 45px;
+}
+section {
+  margin-top: 24px;
+}
+section > div {
+  margin-top: 24px;
+}
+section ul {
+  margin-bottom: 0;
+}
+section ul li {
+  margin-bottom: .5em;
+}
+section h4 {
+  margin-bottom: 0;
+}
+section h4 .location {
+  font-size: 0.9em;
+  font-weight: 400;
+  margin: 0 .5em;
+}
+section h4 .period {
+  font-size: 0.8em;
+  font-weight: 400;
+  float: right;
+}
+section .title {
+  font-size: 0.9em;
+  display: block;
+  margin-bottom: 1em;
+}
+
+.skills h4 {
+  font-size: 1em;
+  margin-bottom: .4em;
+}
+.print {
+  display: none;
+}
+
+.side-note {
+  cursor: pointer;
+}
+
+@media print {
+  body { 
+    background-color: #fff;
+    color: #000;
+  }
+  @page {
+    size: 210mm 297mm; 
+    margin: 27mm 16mm 27mm 16mm; 
+  }
+  .print {
+    display: block;
+  }
+  .no-print {
+    display: none;
+  }
+  a {
+    color: inherit;
+  }
+  li {
+    break-inside: avoid;
+  }
+}

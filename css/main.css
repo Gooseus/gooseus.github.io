@@ -1,0 +1,240 @@
+/*------------------------------------*
+  RESET
+*------------------------------------*/
+body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+pre, form, fieldset, input, textarea,
+p, blockquote, th, td { 
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset, img {
+  border: 0;
+}
+address, caption, cite, dfn, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+caption, th {
+  text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+q:before, q:after {
+  content: '';
+}
+abbr, acronym {
+  border: 0;
+}
+
+/*------------------------------------*
+  MAIN
+*------------------------------------*/
+html {
+  font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+  color: #333;
+}
+
+body {
+  width: 940px;
+  margin: 0 auto;
+  line-height: 1.5em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*------------------------------------*
+  TYPE
+*------------------------------------*/
+/*--- HEADINGS ---*/
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.5em;
+  line-height: 1em;
+  margin-top: .5em;
+}
+
+h2 {
+  font-size: 1.375em;
+  line-height: 1.0909em;
+}
+p + h2,
+ul + h2,
+p + h3,
+ul + h3
+{
+  margin-top: 1em;
+}
+
+h3 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+}
+
+h4 {
+  font-size: 1.125em;
+  line-height: 1.333em;
+}
+
+h5, h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+/*--- PARAGRAPHS ---*/
+
+p {
+  margin-top: 24px;
+}
+
+/*--- LISTS ---*/
+ul, ol {
+  margin-left: 17px;
+  margin-bottom: 24px;
+}
+
+ul {
+  list-style: square outside;
+}
+ul ul {
+  list-style: disc outside;
+}
+
+ul ul,
+ol ol {
+  margin: 0 0 0 60px;
+}
+
+ul li {
+  margin-bottom: .5em;
+}
+
+/*--- QUOTES ---*/
+blockquote {
+  margin: 0 60px 0 45px;
+  border-left: 5px solid #ccc;
+  padding-left: 10px;
+  text-indent: -0.4em;
+}
+
+blockquote b {
+  display: block;
+  text-indent: 0;
+}
+
+/*--- LINKS ---*/
+a {
+  color: #080;
+  text-decoration: none;
+}
+a.active {
+  color: #060;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active,
+a:focus {
+  position: relative;
+  top: 1px;
+}
+
+header > h1 {
+  float: left;
+}
+header > h1::before {
+  content: '';
+  background: url(/images/goose.svg);
+  background-size: 1.1em;
+  background-repeat: no-repeat;
+  width: 1.1em;
+  height: 0.8em;
+  margin-left: -1.3em;
+  margin-right: .2em;
+  display: inline-block;
+}
+header > h1 a:hover {
+  text-decoration: none;
+}
+header > nav {
+  float: left;
+  margin-left: 1em;
+  margin-top: .8em;
+}
+header > nav a {
+  margin-right: .2em;
+  font-size: 1.1em;
+}
+
+footer {
+  margin-top: auto;
+  padding-bottom: 1em;
+}
+footer ul {
+  list-style-type: none;
+  margin: 0;
+}
+footer .license {
+  float: left;
+  margin-right: .75em;
+}
+
+footer .license img {
+  margin-top: 5px;
+  margin-left: .2em;
+}
+footer .license > a,
+footer .license > span {
+  float: left;
+}
+
+h5 {
+  margin-bottom: 0;
+}
+ul {
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+sup { vertical-align: top; position: relative; top: -0.5em; }
+sup.note {
+  cursor: pointer;
+}
+
+.main-list {
+  margin-left: 1.5em;
+  margin-top: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background-color: #222;
+  }
+
+  a {
+    color: #0B0;
+  }
+  
+  a.active {
+    color: #0E0;
+    text-decoration: underline;
+  }
+
+  header > h1::before {
+    filter: invert(90%);
+    -webkit-filter: invert(90%);
+  }
+}
