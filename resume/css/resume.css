@@ -197,6 +197,28 @@ section .title {
   cursor: pointer;
 }
 
+@media (max-width: 950px) {
+  body {
+    width: 100%;
+  }
+  main { 
+    padding: 0 1em;
+    display: block;
+  }
+  article, aside {
+    width: auto
+  }
+  aside {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+  }
+  aside > div {
+    margin-left: 1em;
+    width: 33%;
+  }
+}
+
 @media print {
   body { 
     background-color: #fff;

@@ -4,6 +4,7 @@
   <head>
     <!-- Try to use minimal meta tags -->
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shawn Marincas | Professional Resume</title>
     <meta property="og:title" content="Professional Resume of Shawn Marincas" />
     <link rel="icon" href="/favicon.png" type="image/svg+xml" />
@@ -16,16 +17,6 @@
     
       <script type="module" src="/js/bundle.js"></script>
     
-    <script type="module">
-      import { r, t } from '../js/arrow.js';
-
-      const tipStore = r({
-        tip: '',
-      });
-      const attachHello = html`
-        <span>${() => tipStore.tip}</span>
-      `;
-    </script>
   </head>
   <body>
     <main>
@@ -255,13 +246,18 @@
           <h4>Familiar</h4>
           <ul>
             <li>React</li>
-            <li>NextJS</li>
             <li>VueJS</li>
+            <li>Redis</li>
             <li>Neo4j</li>
             <li>Postgres</li>
           </ul>
         </div>
       </aside>
     </main>
+    <!-- Calendly badge widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/gooseus', text: 'Schedule time with me', color: '#0069ff', textColor: '#ffffff', branding: true }); }</script>
+    <!-- Calendly badge widget end -->
   </body>
 </html>
