@@ -197,7 +197,7 @@ section .title {
   cursor: pointer;
 }
 
-@media (max-width: 950px) {
+@media screen (max-width: 950px) {
   body {
     width: 100%;
   }
@@ -231,7 +231,7 @@ section .title {
   .print {
     display: block;
   }
-  .no-print {
+  .no-print, .calendly-badge-widget {
     display: none;
   }
   a {
