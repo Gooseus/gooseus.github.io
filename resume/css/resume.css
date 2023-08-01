@@ -124,7 +124,7 @@ blockquote b {
 }
 
 /*--- LINKS ---*/
-a, link {
+a, link, sup.side-note {
   /* color: #09f; */
   color: #084;
   text-decoration: none;

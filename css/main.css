@@ -48,14 +48,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 0 1.5em 0 2em; 
 }
+
 
 /*------------------------------------*
   TYPE
 *------------------------------------*/
 /*--- HEADINGS ---*/
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 24px;
+  margin-bottom: 0.5em;
   font-weight: bold;
 }
 
@@ -171,6 +173,7 @@ header > h1 a:hover {
 header > nav {
   float: left;
   margin-left: 1em;
+  margin-bottom: .5em;
   margin-top: .8em;
 }
 header > nav a {
@@ -216,6 +219,28 @@ sup.note {
 .main-list {
   margin-left: 1.5em;
   margin-top: 1em;
+}
+
+
+@media (max-width: 950px) {
+  body {
+    width: 100%;
+    padding: 0;
+  }
+  main { 
+    padding-right: 1em;
+  }
+
+  header > h1::before {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 490px) {
+  header > nav { 
+    margin-left: 0; margin-top: 0;
+    margin-right: 20px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

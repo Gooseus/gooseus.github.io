@@ -16,6 +16,16 @@
     
       <script type="module" src="/js/bundle.js"></script>
     
+    <script type="module">
+      import { r, t } from '../js/arrow.js';
+
+      const tipStore = r({
+        tip: '',
+      });
+      const attachHello = html`
+        <span>${() => tipStore.tip}</span>
+      `;
+    </script>
   </head>
   <body>
     <main>
@@ -211,12 +221,12 @@
         <!-- Languages that I have experience in -->
         <div class="skills">
           <h3>Languages</h3>
-          <h4>Proficient<span class="no-print side-note link">*</span></h4>
+          <h4>Proficient</h4>
           <ul>
             <li>Typescript / Javascript</li>
             <li>HTML / CSS</li>
           </ul>
-          <h4>Familiar<sup class="no-print side-note link">*</sup></h4>
+          <h4>Familiar<sup class="no-print side-note link" data-aside="Familiar means I've worked on something significant, or else I used to be proficient and haven't worked with it in awhile.">*</sup></h4>
           <ul>
             <li>Python</li>
             <li>Nim</li>
