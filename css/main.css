@@ -1,10 +1,8 @@
 /*------------------------------------*
   RESET
 *------------------------------------*/
-body, div, dl, dt, dd, ul, ol, li,
-h1, h2, h3, h4, h5, h6,
-pre, form, fieldset, input, textarea,
-p, blockquote, th, td { 
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, 
+form, fieldset, input, textarea, p, blockquote, th, td {
   margin: 0;
   padding: 0;
 }
@@ -12,7 +10,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-fieldset, img {
+fieldset,
+img {
   border: 0;
 }
 address, caption, cite, dfn, th, var {
@@ -27,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 q:before, q:after {
-  content: '';
+  content: "";
 }
 abbr, acronym {
   border: 0;
@@ -42,21 +41,29 @@ html {
 }
 
 body {
-  width: 940px;
+  width: 960px;
   margin: 0 auto;
   line-height: 1.5em;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 0 1.5em 0 2em; 
+  padding: 0 1.5em 0 2em;
 }
 
+article, footer {
+  width: 640px;
+}
 
 /*------------------------------------*
   TYPE
 *------------------------------------*/
 /*--- HEADINGS ---*/
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 0.5em;
   font-weight: bold;
 }
@@ -64,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 1.5em;
   line-height: 1em;
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 h2 {
@@ -74,8 +81,7 @@ h2 {
 p + h2,
 ul + h2,
 p + h3,
-ul + h3
-{
+ul + h3 {
   margin-top: 1em;
 }
 
@@ -89,7 +95,8 @@ h4 {
   line-height: 1.333em;
 }
 
-h5, h6 {
+h5,
+h6 {
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -97,13 +104,14 @@ h5, h6 {
 /*--- PARAGRAPHS ---*/
 
 p {
-  margin-top: 24px;
+  margin-top: 1em;
 }
 
 /*--- LISTS ---*/
-ul, ol {
+ul,
+ol {
   margin-left: 17px;
-  margin-bottom: 24px;
+  margin-bottom: 1em;
 }
 
 ul {
@@ -119,7 +127,7 @@ ol ol {
 }
 
 ul li {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 /*--- QUOTES ---*/
@@ -157,14 +165,15 @@ header > h1 {
   float: left;
 }
 header > h1::before {
-  content: '';
+  content: "";
   background: url(/images/goose.svg);
   background-size: 1.1em;
   background-repeat: no-repeat;
-  width: 1.1em;
+  background-position-x: 0.3em;
+  width: 1.4em;
   height: 0.8em;
-  margin-left: -1.3em;
-  margin-right: .2em;
+  margin-left: -1.6em;
+  margin-right: 0;
   display: inline-block;
 }
 header > h1 a:hover {
@@ -173,11 +182,12 @@ header > h1 a:hover {
 header > nav {
   float: left;
   margin-left: 1em;
-  margin-bottom: .5em;
-  margin-top: .8em;
+  margin-bottom: 0.5em;
+  margin-top: 0.8em;
+  padding-right: 1em;
 }
 header > nav a {
-  margin-right: .2em;
+  margin-right: 0.2em;
   font-size: 1.1em;
 }
 
@@ -191,12 +201,18 @@ footer ul {
 }
 footer .license {
   float: left;
-  margin-right: .75em;
+  font-size: 0.8em;
+  line-height: 1.171875em;
+  margin-right: 0.75em;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 footer .license img {
-  margin-top: 5px;
-  margin-left: .2em;
+  position: relative;
+  top: 0.05em;
+  margin-left: 0.3em;
 }
 footer .license > a,
 footer .license > span {
@@ -211,7 +227,11 @@ ul {
   margin-bottom: 0;
 }
 
-sup { vertical-align: top; position: relative; top: -0.5em; }
+sup {
+  vertical-align: top;
+  position: relative;
+  top: -0.5em;
+}
 sup.note {
   cursor: pointer;
 }
@@ -222,23 +242,29 @@ sup.note {
 }
 
 
-@media (max-width: 950px) {
+@media screen and (max-width: 655px) {
   body {
     width: 100%;
-    padding: 0;
+    padding: 0 1em;
   }
-  main { 
-    padding-right: 1em;
+
+  article {
+    width: auto;
+    padding-right: 2em;
   }
 
   header > h1::before {
     margin-left: 0;
+    background-position-x: 0;
+    width: 1.1em;
+    margin-right: -0.1em;
   }
 }
 
-@media (max-width: 490px) {
-  header > nav { 
-    margin-left: 0; margin-top: 0;
+@media screen and (max-width: 504px) {
+  header > nav {
+    margin-left: 0;
+    margin-top: 0;
     margin-right: 20px;
   }
 }
@@ -250,11 +276,11 @@ sup.note {
   }
 
   a {
-    color: #0B0;
+    color: #0b0;
   }
-  
+
   a.active {
-    color: #0E0;
+    color: #0e0;
     text-decoration: underline;
   }
 

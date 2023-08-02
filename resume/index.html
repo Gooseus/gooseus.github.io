@@ -16,6 +16,22 @@
      
     <script type="module" src="/js/bundle.js"></script>
     
+    <script>
+      const openToolTip = (e) => {
+        const el = e.target;
+        e.stopPropagation();
+        const dialog = document.getElementById(el.dataset.tip);
+        dialog.show();
+        window.addEventListener("click", closeAllToolTips);
+      };
+      const closeAllToolTips = () => {
+        const dialogs = document.querySelectorAll("dialog");
+        console.log("dialogs");
+        for (const dialog of dialogs) dialog.close();
+        window.removeEventListener("click", closeAllToolTips);
+      };
+      window.addEventListener("keyup", (e) => e.key === "Escape" && closeAllToolTips());
+    </script>
   </head>
   <body>
     <main>
@@ -86,7 +102,7 @@
                 MongoDB.
               </li>
               <li>
-                Built reporting dashboards to present data gathered by the IoT platform for clients
+                Build reporting dashboards to present data gathered by the IoT platform for clients
                 to consume activity and engagement statistics using AngularJS, ExpressJS, and
                 MongoDB.
               </li>
@@ -168,7 +184,8 @@
               <span class="period">2001 - 2005</span>
             </h4>
             <span class="title"
-              >Honors Graduate &ndash; Bachelor of Engineering in Computer Engineering</span>
+              >Honors Graduate &ndash; Bachelor of Engineering in Computer Engineering</span
+            >
           </div>
         </section>
       </article>
@@ -200,10 +217,13 @@
           </ul>
           <h4>
             Familiar<sup
+              data-tip="languages-familiar"
               class="no-print side-note link"
-              data-aside="Familiar means I've worked on something significant, or else I used to be proficient and haven't worked with it in awhile."
               >*</sup
             >
+            <dialog id="languages-familiar">
+              <p>Familiar means I've worked on something significant, or else I used to be proficient and haven't worked with it in awhile.</p>
+            </dialog>
           </h4>
           <ul>
             <li>Python</li>
@@ -211,7 +231,15 @@
             <li>PHP</li>
             <li>Perl</li>
           </ul>
-          <h4>Acquainted<sup class="no-print side-note link">*</sup></h4>
+          <h4>
+            Acquainted<sup data-tip="languages-acquainted" class="no-print side-note link">*</sup>
+            <dialog id="languages-acquainted">
+              <p>
+                Things are languages I have decent understanding of and have used in toy examples or
+                evaluated for some solutions
+              </p>
+            </dialog>
+          </h4>
           <ul>
             <li>Julia</li>
             <li>R</li>
@@ -259,5 +287,11 @@
       };
     </script>
     <!-- Calendly badge widget end -->
+    <script>
+      // side-note
+      document.querySelectorAll(".side-note").forEach((el) => {
+        el.addEventListener("click", openToolTip);
+      });
+    </script>
   </body>
 </html>
