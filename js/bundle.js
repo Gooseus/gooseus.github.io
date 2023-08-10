@@ -1243,7 +1243,7 @@
     const TERMINAL_ID = "terminal";
     const PROMPT_ID = "terminal-input";
     const TERMINAL_OUTPUT_ID = "terminal-output";
-    // Machine Context vs App Store
+
     // Initial Context / Store
     const initialTerminalContext = {
         terminalInput: null,
@@ -1259,7 +1259,8 @@
         test: "Init",
         debug: false,
     };
-    // Reactive store
+
+    // ArrowJS reactive store
     const store = reactive(initialTerminalContext);
     const evalOutput = (prevOutput, newOutput, next = null, error = null) => ({
         output: [...prevOutput, newOutput],

@@ -150,6 +150,7 @@ a {
 }
 a.active {
   color: #060;
+  /* text-decoration-color: rgb(255, 240, 0) !important; */
   text-decoration: underline;
 }
 a:hover {
@@ -200,7 +201,6 @@ footer ul {
   margin: 0;
 }
 footer .license {
-  float: left;
   font-size: 0.8em;
   line-height: 1.171875em;
   margin-right: 0.75em;
@@ -211,12 +211,7 @@ footer .license {
 
 footer .license img {
   position: relative;
-  top: 0.05em;
-  margin-left: 0.3em;
-}
-footer .license > a,
-footer .license > span {
-  float: left;
+  top: 0.25em;
 }
 
 h5 {

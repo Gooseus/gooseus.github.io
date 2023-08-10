@@ -24,9 +24,11 @@
         dialog.show();
         window.addEventListener("click", closeAllToolTips);
       };
-      const closeAllToolTips = () => {
+      const closeAllToolTips = (e) => {
+        console.log("click", e);
+        if (e.srcElement.classList.contains("tooltip") || e.srcElement.nodeName === "dialog")
+          return;
         const dialogs = document.querySelectorAll("dialog");
-        console.log("dialogs");
         for (const dialog of dialogs) dialog.close();
         window.removeEventListener("click", closeAllToolTips);
       };
@@ -216,13 +218,12 @@
             <li>HTML / CSS</li>
           </ul>
           <h4>
-            Familiar<sup
-              data-tip="languages-familiar"
-              class="no-print side-note link"
-              >*</sup
-            >
+            Familiar<sup data-tip="languages-familiar" class="no-print side-note link">*</sup>
             <dialog id="languages-familiar">
-              <p>Familiar means I've worked on something significant, or else I used to be proficient and haven't worked with it in awhile.</p>
+              <p class="tooltip">
+                Familiar meaning I've either worked on a few significant things (Python, Nim), or else I
+                was proficient once upon a time (PHP, Perl).
+              </p>
             </dialog>
           </h4>
           <ul>
@@ -234,8 +235,8 @@
           <h4>
             Acquainted<sup data-tip="languages-acquainted" class="no-print side-note link">*</sup>
             <dialog id="languages-acquainted">
-              <p>
-                Things are languages I have decent understanding of and have used in toy examples or
+              <p class="tooltip">
+                Acquainted meaning languages I have decent understanding of and have used in toy examples or
                 evaluated for some solutions
               </p>
             </dialog>
@@ -289,9 +290,9 @@
     <!-- Calendly badge widget end -->
     <script>
       // side-note
-      document.querySelectorAll(".side-note").forEach((el) => {
-        el.addEventListener("click", openToolTip);
-      });
+      document
+        .querySelectorAll(".side-note")
+        .forEach((el) => el.addEventListener("click", openToolTip));
     </script>
   </body>
 </html>

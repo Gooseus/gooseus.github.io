@@ -239,6 +239,16 @@ section .title {
   cursor: pointer;
 }
 
+dialog, dialog:active {
+  padding: 0.25em 0.5em;
+  border-width: 1px;
+  border-radius: 3px;
+}
+dialog > p {
+  margin: 0;
+  font-size: .5em;
+}
+
 @media screen and (max-width: 950px) {
   body {
     width: 100%;
