@@ -3,13 +3,12 @@ import { createMachine, reduce, state, transition, interpret, immediate, } from 
 import "../js/robot3/debug.js";
 import { commandConsoleInterpreter, createCommandConsoleTemplate, } from "./command-console/index.js";
 import { reduceWithKeys, doThenElse, createSwitchState, guardKeyZero, reduceSetKeyValue, } from "./robot-utils.js";
-
 // Terminal constants
 // View IDs
 const TERMINAL_ID = "terminal";
 const PROMPT_ID = "terminal-input";
 const TERMINAL_OUTPUT_ID = "terminal-output";
-
+// Machine Context vs App Store
 // Initial Context / Store
 const initialTerminalContext = {
     terminalInput: null,
@@ -25,8 +24,7 @@ const initialTerminalContext = {
     test: "Init",
     debug: false,
 };
-
-// ArrowJS reactive store
+// Reactive store
 const store = reactive(initialTerminalContext);
 const evalOutput = (prevOutput, newOutput, next = null, error = null) => ({
     output: [...prevOutput, newOutput],

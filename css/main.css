@@ -36,12 +36,13 @@ abbr, acronym {
   MAIN
 *------------------------------------*/
 html {
-  font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  font-family: 'Cormorant Garamond', Georgia, "Times New Roman", Times, serif;
   color: #333;
 }
 
 body {
-  width: 960px;
+  width: 1200px;
   margin: 0 auto;
   line-height: 1.5em;
   min-height: 100vh;
@@ -51,7 +52,7 @@ body {
 }
 
 article, footer {
-  width: 640px;
+  width: 960px;
 }
 
 /*------------------------------------*
@@ -237,6 +238,12 @@ sup.note {
 }
 
 
+#apps {
+  position:fixed;
+  right: 1em;
+  top: 1em;
+}
+
 @media screen and (max-width: 655px) {
   body {
     width: 100%;
@@ -271,11 +278,10 @@ sup.note {
   }
 
   a {
-    color: #0b0;
+    color: #0f0;
   }
-
-  a.active {
-    color: #0e0;
+  a.active, a:hover {
+    color: #ff0;
     text-decoration: underline;
   }
 

@@ -1015,15 +1015,15 @@
     const min = 60 * sec;
     const hour = 60 * min;
     const pad$1 = (n, p = "0") => n.toString().padStart(2, p);
-    const makeTimeFormat$1 = (div, mod) => time => pad$1(Math.floor(time / div) % mod);
+    const makeTimeFormat$1 = (div, mod) => (time) => pad$1(Math.floor(time / div) % mod);
     const timeFormats$1 = [
         makeTimeFormat$1(hour, 24),
         makeTimeFormat$1(min, 60),
         makeTimeFormat$1(sec, 60),
         makeTimeFormat$1(1, 1000),
     ];
-    const getTimeDisplays$1 = time => timeFormats$1.map(fn => fn(time));
-    const update$1 = store => () => {
+    const getTimeDisplays$1 = (time) => timeFormats$1.map((fn) => fn(time));
+    const update$1 = (store) => () => {
         const [hr, min, sec, ms] = getTimeDisplays$1((store.elapsed = Date.now() - store.start));
         store.display = `${hr}:${min}:${sec}:${ms}`;
     };
@@ -1036,7 +1036,14 @@
             ...opts,
         });
         const attachTimer = html `<div id="timer">
-    <div id="timer-display">${() => timerStore.display}</div>
+    <div id="timer-display">
+      <dl>
+        <dt>Started</dt>
+        <dd>${new Date(timerStore.start).toLocaleString()}</dd>
+        <dt>Elapsed</dt>
+        <dd>${() => timerStore.display}</dd>
+      <dl>
+    </div>
   </div>`;
         const startTimer = (element, mode_override) => {
             if (mode_override)
@@ -1050,7 +1057,7 @@
     };
 
     const pad = (n, p = "0") => n.toString().padStart(2, p);
-    const makeTimeFormat = (method) => date => pad(date[method]);
+    const makeTimeFormat = (method) => date => pad(date[method]());
     const timeFormats = [
         makeTimeFormat("getHours"),
         makeTimeFormat("getMinutes"),
@@ -1064,7 +1071,10 @@
     const Clock = (mode = "default", opts) => {
         const clockStore = reactive({ display: "00:00:00", mode, ...opts });
         const attachClock = html `<div id="clock">
-    <div id="clock-display">${() => clockStore.display}</div>
+    <div id="clock-display">
+      Current time:<br />
+      ${() => clockStore.display}
+    </div>
   </div>`;
         const startClock = (element, mode_override) => {
             if (mode_override)
@@ -1100,7 +1110,7 @@
             return `Started timer in mode: ${mode}`;
         },
         roll: (dice = "1d20") => {
-            const [count, sides] = dice.split("d").map(n => parseInt(n));
+            const [count, sides] = dice.split("d").map((n) => parseInt(n));
             const rolls = [];
             for (let i = 0; i < count; i++) {
                 rolls.push(Math.ceil(Math.random() * sides));
@@ -1130,8 +1140,7 @@
 <b>set</b> [attr] [value] - set an attribute value on the document body
 <b>get</b> [attr] - get an attribute value from the document body
 </pre>`;
-    const msgNext = (next, message, log) => (log && console.log(log),
-        { message, next, timestamp: new Date().toLocaleString() });
+    const msgNext = (next, message, log) => (log && console.log(log), { message, next, timestamp: new Date().toLocaleString() });
     // Interpreter commands
     const COMMANDS = {
         help: () => HELP_MESSAGE,
@@ -1144,9 +1153,9 @@
             else
                 return msgNext("error", `Cannot start unknown app: ${app}`);
         },
-        stop: app => {
+        stop: (app) => {
             console.log('Stopping "app":', app);
-            const appIndex = runningApps.findIndex(a => a.name === app);
+            const appIndex = runningApps.findIndex((a) => a.name === app);
             if (appIndex > -1) {
                 clearInterval(runningApps[appIndex].interval);
                 runningApps.splice(appIndex, 1);
@@ -1155,7 +1164,7 @@
             else
                 return msgNext("error", `Cannot stop unknown app: ${app}`);
         },
-        goto: link => {
+        goto: (link) => {
             if (LINKS[link]) {
                 location.href = LINKS[link];
                 return `Going to ${location.href}`;
@@ -1192,24 +1201,18 @@
     };
     // Command Console Template
     const createCommandConsoleTemplate = (consoleId, inputId, outputId, store, handleKeyup) => {
-        return html `<div
-  id="${consoleId}"
-  class="${() => store.mode}">
-  <h5>Test: ${() => store.test}</h5>
-  <ul id="${outputId}">
-    ${() => store.output.map(line => html `<li class="${line.type}">
-          <span class="timestamp">${line.timestamp}</span>
-          ${line.display}
-        </li>`)}
-  </ul>
-  <div id="prompt">
-    <input
-      autocomplete="off"
-      id="${inputId}"
-      type="text"
-      @keyup="${handleKeyup}" />
-  </div>
-</div>`;
+        return html `<div id="${consoleId}" class="${() => store.mode}">
+    <div>Terminal: ${() => store.test}</div>
+    <ul id="${outputId}">
+      ${() => store.output.map((line) => html `<li class="${line.type}">
+            <span class="timestamp">${line.timestamp}</span>
+            ${line.display}
+          </li>`)}
+    </ul>
+    <div id="prompt">
+      <input autocomplete="off" id="${inputId}" type="text" @keyup="${handleKeyup}" />
+    </div>
+  </div>`;
     };
 
     const reduceWithKeys = (ck, ek) => reduce((ctx, evt) => {
@@ -1243,7 +1246,7 @@
     const TERMINAL_ID = "terminal";
     const PROMPT_ID = "terminal-input";
     const TERMINAL_OUTPUT_ID = "terminal-output";
-
+    // Machine Context vs App Store
     // Initial Context / Store
     const initialTerminalContext = {
         terminalInput: null,
@@ -1259,8 +1262,7 @@
         test: "Init",
         debug: false,
     };
-
-    // ArrowJS reactive store
+    // Reactive store
     const store = reactive(initialTerminalContext);
     const evalOutput = (prevOutput, newOutput, next = null, error = null) => ({
         output: [...prevOutput, newOutput],
