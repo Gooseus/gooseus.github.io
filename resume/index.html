@@ -25,7 +25,6 @@
         window.addEventListener("click", closeAllToolTips);
       };
       const closeAllToolTips = (e) => {
-        console.log("click", e);
         if (e.srcElement.classList.contains("tooltip") || e.srcElement.nodeName === "dialog")
           return;
         const dialogs = document.querySelectorAll("dialog");
@@ -216,31 +215,16 @@
             <li>Typescript / Javascript</li>
             <li>HTML / CSS</li>
           </ul>
-          <h4>
-            Familiar<sup data-tip="languages-familiar" class="no-print side-note link">*</sup>
-            <dialog id="languages-familiar">
-              <p class="tooltip">
-                Familiar meaning I've either worked on a few significant things (Python, Nim), or else I
-                was proficient once upon a time (PHP, Perl).
-              </p>
-            </dialog>
-          </h4>
+          <h4>Familiar</h4>
           <ul>
             <li>Python</li>
             <li>Nim</li>
             <li>PHP</li>
             <li>Perl</li>
           </ul>
-          <h4>
-            Acquainted<sup data-tip="languages-acquainted" class="no-print side-note link">*</sup>
-            <dialog id="languages-acquainted">
-              <p class="tooltip">
-                Acquainted meaning languages I have decent understanding of and have used in toy examples or
-                evaluated for some solutions
-              </p>
-            </dialog>
-          </h4>
+          <h4>Acquainted</h4>
           <ul>
+            <li>Elixir</li>
             <li>Julia</li>
             <li>R</li>
             <li>Lisp</li>
