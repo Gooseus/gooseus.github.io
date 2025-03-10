@@ -1,29 +1,10 @@
 /*------------------------------------*
   RESET
 *------------------------------------*/
-body,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-form,
-fieldset,
-input,
-textarea,
-p,
-blockquote,
-th,
-td {
+body, div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+pre, form, fieldset, input, textarea,
+p, blockquote, th, td { 
   margin: 0;
   padding: 0;
 }
@@ -31,53 +12,39 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-fieldset,
-img {
+fieldset, img {
   border: 0;
 }
-address,
-caption,
-cite,
-dfn,
-th,
-var {
+address, caption, cite, dfn, th, var {
   font-style: normal;
   font-weight: normal;
 }
-caption,
-th {
+caption, th {
   text-align: left;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
   font-weight: normal;
 }
-q:before,
-q:after {
-  content: "";
+q:before, q:after {
+  content: '';
 }
-abbr,
-acronym {
+abbr, acronym {
   border: 0;
 }
 /*------------------------------------*
   MAIN
 *------------------------------------*/
 html {
-  font-family: Cambria, Georgia, "Times New Roman", Times, serif;
-  background-color: #faf9f6;
-  color: #3f3844;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f8f9fa;
+  color: #2d3748;
 }
 
 body {
   width: 940px;
   margin: 0 auto;
-  line-height: 1.5em;
+  line-height: 1.6em;
   padding-top: 36px;
 }
 
@@ -85,29 +52,29 @@ body {
   TYPE
 *------------------------------------*/
 /*--- HEADINGS ---*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 24px;
-  font-weight: bold;
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #1a202c;
 }
 
 h1 {
-  font-size: 1.5em;
-  line-height: 1em;
+  font-size: 2em;
+  line-height: 1.2em;
+  color: #2c5282; /* Subtle blue for your name */
 }
 
 h2 {
-  font-size: 1.375em;
-  line-height: 1.0909em;
+  font-size: 1.4em;
+  line-height: 1.2em;
+  color: #4a5568;
 }
 
 h3 {
-  font-size: 1.25em;
+  font-size: 1.3em;
   line-height: 1.2em;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
 }
 
 h4 {
@@ -115,8 +82,7 @@ h4 {
   line-height: 1.333em;
 }
 
-h5,
-h6 {
+h5, h6 {
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -126,14 +92,13 @@ p {
   margin-bottom: 24px;
 }
 
-p + p {
+p+p {
   text-indent: 1em;
   margin-top: -24px;
 }
 
 /*--- LISTS ---*/
-ul,
-ol {
+ul, ol {
   margin-left: 17px;
   margin-bottom: 24px;
 }
@@ -164,15 +129,14 @@ blockquote b {
 }
 
 /*--- LINKS ---*/
-a,
-link,
-sup.side-note {
-  /* color: #09f; */
-  color: #084;
+a, link, sup.side-note {
+  color: #3182ce;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
+  color: #2b6cb0;
   text-decoration: underline;
 }
 
@@ -186,15 +150,17 @@ main {
   display: flex;
   flex-direction: row;
   padding-bottom: 45px;
+  gap: 30px;
 }
 article {
-  width: 68.75%;
+  width: 68%;
   min-height: 100vh;
 }
 aside {
-  width: 31.25%;
+  width: 32%;
   height: 100vh;
-  padding-left: 45px;
+  padding-left: 20px;
+  border-left: 1px solid #e2e8f0;
 }
 section {
   margin-top: 24px;
@@ -204,22 +170,27 @@ section > div {
 }
 section ul {
   margin-bottom: 0;
+  margin-left: 20px;
 }
 section ul li {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.7em;
+  position: relative;
 }
 section h4 {
-  margin-bottom: 0;
+  margin-bottom: 8px;
+  color: #2c5282; /* Matching blue for company names */
 }
 section h4 .location {
   font-size: 0.9em;
   font-weight: 400;
-  margin: 0 0.5em;
+  margin: 0 .5em;
+  color: #4a5568;
 }
 section h4 .period {
   font-size: 0.8em;
   font-weight: 400;
   float: right;
+  color: #718096;
 }
 section .title {
   font-size: 0.9em;
@@ -229,63 +200,58 @@ section .title {
 
 .skills h4 {
   font-size: 1em;
-  margin-bottom: 0.4em;
+  margin-bottom: .8em;
+  color: #4a5568;
 }
+
+.skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.skills ul li {
+  margin-bottom: .5em;
+  width: calc(50% - 16px);
+}
+
 .print {
   display: none;
 }
 
 .side-note {
+  position: relative;
   cursor: pointer;
 }
 
-dialog, dialog:active {
-  padding: 0.25em 0.5em;
-  border-width: 1px;
-  border-radius: 3px;
-}
-dialog > p {
-  margin: 0;
-  font-size: .5em;
-}
-
-@media screen and (max-width: 950px) {
-  body {
-    width: 100%;
-  }
-  main {
-    padding: 0 1em;
-    display: block;
-  }
-  article,
-  aside {
-    width: auto;
-  }
-  aside {
-    display: flex;
-    flex-direction: row;
-    padding-left: 0;
-  }
-  aside > div {
-    margin-left: 1em;
-    width: 33%;
-  }
+.side-note:hover::after {
+  content: attr(data-aside);
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  background: #2d3748;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 200px;
+  font-size: 0.8em;
+  z-index: 10;
 }
 
 @media print {
-  body {
+  body { 
     background-color: #fff;
     color: #000;
+    width: 100%;
   }
   @page {
-    size: 210mm 297mm;
-    margin: 27mm 16mm 27mm 16mm;
+    size: 210mm 297mm; 
+    margin: 27mm 16mm 27mm 16mm; 
   }
   .print {
     display: block;
   }
-  .no-print,
-  .calendly-badge-widget {
+  .no-print {
     display: none;
   }
   a {
@@ -293,5 +259,348 @@ dialog > p {
   }
   li {
     break-inside: avoid;
+  }
+  main {
+    gap: 20px;
+  }
+  .work-experience div {
+    box-shadow: none;
+    background-color: transparent;
+    padding: 8px 0;
+  }
+  aside {
+    border-left: 1px solid #ddd;
+  }
+  h1 {
+    color: #000;
+  }
+  h3 {
+    border-bottom: 1px solid #ddd;
+  }
+  section h4 {
+    color: #000;
+  }
+  section, div {
+  }
+  .skills ul li {
+    width: auto;
+    margin-right: 10px;
+  }
+  .current-role {
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+  /* Additional print optimizations */
+  
+  /* Ensure proper page margins */
+  @page {
+    margin: 0.5in;
+  }
+  
+  /* Ensure proper section breaks */
+  section {
+    margin-bottom: 15px;
+  }
+  
+  /* Optimize education section for print */
+  .education div {
+    page-break-inside: avoid;
+  }
+  
+  /* Ensure links are readable in print */
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* Make company names stand out */
+  section h4 {
+    font-weight: bold;
+    color: black;
+  }
+  
+  /* Adjust title display for print */
+  .title {
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  
+  /* Ensure proper list spacing */
+  section ul li {
+    margin-bottom: 5px;
+  }
+  
+  /* Optimize header for print */
+  header {
+    margin-bottom: 15px;
+  }
+}
+
+/* Add subtle card effect to work experience items */
+.work-experience div {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.work-experience div:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Highlight current role */
+.current-role {
+  border-left: 3px solid #3182ce !important;
+  padding-left: 16px !important;
+}
+
+/* Improved Skills Section */
+.skills-container {
+  margin-top: 30px;
+}
+
+.skill-category {
+  margin-bottom: 24px;
+}
+
+.skill-category h4 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  color: #2c5282;
+  font-weight: 600;
+}
+
+.skill-description {
+  font-size: 0.85em;
+  color: #718096;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  background-color: #ebf4ff;
+  color: #3182ce;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.85em;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background-color: #bee3f8;
+  transform: translateY(-2px);
+}
+
+/* Current role highlight */
+.work-experience div:first-child {
+  border-left: 3px solid #3182ce;
+  padding-left: 16px;
+}
+
+/* Enhanced print styles */
+@media print {
+  /* Basic print setup */
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+    font-size: 10pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    filter: grayscale(100%);
+  }
+  
+  @page {
+    margin: 0.4in;
+    size: letter portrait;
+  }
+  
+  /* Layout adjustments */
+  main {
+    display: flex !important;
+    width: 100%;
+    padding: 0;
+    gap: 15px;
+  }
+  
+  article {
+    width: 68%;
+  }
+  
+  aside {
+    width: 32%;
+    padding-left: 15px;
+    border-left: 1px solid #ddd;
+  }
+
+  
+  /* Typography adjustments */
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 8px !important;
+  }
+  
+  h1 {
+    font-size: 16pt;
+  }
+  
+  h2 {
+    font-size: 13pt;
+    margin-bottom: 12px !important;
+  }
+  
+  h3 {
+    font-size: 12pt;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+    margin-bottom: 10px !important;
+  }
+  
+  /* Compact content */
+  p {
+    margin-bottom: 10px !important;
+    font-size: 9pt;
+    line-height: 1.3;
+  }
+  
+  /* Work experience adjustments */
+  .work-experience {
+    margin-top: 10px !important;
+  }
+  
+  .work-experience div {
+    page-break-inside: avoid;
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: none !important;
+  }
+  
+  .work-experience div:first-child {
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+  
+  /* Compact list items */
+  section ul {
+    margin-left: 15px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  section ul li {
+    margin-bottom: 2px !important;
+    line-height: 1.2 !important;
+    font-size: 9pt !important;
+  }
+  
+  /* Skill tags for print - simplified to text list */
+  .skill-tags {
+    display: block !important;
+  }
+  
+  .skill-tag {
+    background: none !important;
+    border: none !important;
+    color: black !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline !important;
+    font-size: 9pt !important;
+  }
+  
+  .skill-tag::after {
+    content: ", ";
+  }
+  
+  .skill-tag:last-child::after {
+    content: "";
+  }
+  
+  /* Skill categories more compact */
+  .skill-category {
+    margin-bottom: 8px !important;
+  }
+  
+  .skill-category h4 {
+    margin-bottom: 2px !important;
+    font-weight: bold !important;
+    font-size: 10pt !important;
+  }
+  
+  /* Job title styling */
+  .title {
+    font-style: italic !important;
+    margin-bottom: 4px !important;
+    display: block !important;
+    font-size: 9pt !important;
+  }
+  
+  /* Company header styling */
+  section h4 {
+    font-weight: bold !important;
+    margin-bottom: 2px !important;
+    font-size: 10pt !important;
+  }
+  
+  section h4 .period, 
+  section h4 .location {
+    font-weight: normal !important;
+    font-size: 9pt !important;
+  }
+  
+  /* Hide elements not needed for print */
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Ensure links are readable */
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+  
+  /* Reduce all margins and padding */
+  * {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Ensure first page content fits */
+  header {
+    margin-bottom: 10px !important;
+  }
+  
+  /* Reduce space between sections */
+  section {
+    margin-top: 10px !important;
+  }
+  
+  /* Ensure summary is compact */
+  .summary {
+    margin-bottom: 10px !important;
+  }
+  
+  /* Ensure first job title is close to work experience header */
+  .work-experience h3 + div .title {
+    margin-top: 5px !important;
+  }
+}
+
+/* JavaScript-added class for print layout */
+@media print {
+  .js-subsequent-content {
+    width: 100% !important;
+    padding: 0 !important;
   }
 }

@@ -1,37 +1,33 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Try to use minimal meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shawn Marincas | Professional Resume</title>
     <meta property="og:title" content="Professional Resume of Shawn Marincas" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/favicon.png" type="image/svg+xml" />
+    <!-- Add Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
-    <link type="text/css" rel="stylesheet" href="css/resume.min.css" />
-     
-    <link rel="stylesheet" href="/css/command-console.css" />
-     
-    <script type="module" src="/js/bundle.js"></script>
+      <link type="text/css" rel="stylesheet" href="css/resume.css" />
     
-    <script>
-      const openToolTip = (e) => {
-        const el = e.target;
-        e.stopPropagation();
-        const dialog = document.getElementById(el.dataset.tip);
-        dialog.show();
-        window.addEventListener("click", closeAllToolTips);
-      };
-      const closeAllToolTips = (e) => {
-        if (e.srcElement.classList.contains("tooltip") || e.srcElement.nodeName === "dialog")
-          return;
-        const dialogs = document.querySelectorAll("dialog");
-        for (const dialog of dialogs) dialog.close();
-        window.removeEventListener("click", closeAllToolTips);
-      };
-      window.addEventListener("keyup", (e) => e.key === "Escape" && closeAllToolTips());
+    
+      <link rel="stylesheet" href="/css/command-console.css" />
+    
+    
+      <script type="module" src="/js/index.js"></script>
+    
+    <script type="module">
+      import { r, t } from '../js/arrow.js';
+
+      const tipStore = r({
+        tip: '',
+      });
+      const attachHello = html`
+        <span>${() => tipStore.tip}</span>
+      `;
     </script>
   </head>
   <body>
@@ -42,20 +38,50 @@
           <h2>Solution Architect / Full-stack Developer</h2>
         </header>
         <!-- Summary of Self -->
-        <section>
+        <section class="summary">
           <h3>Summary</h3>
           <p>
-            Skilled computer engineer with 20 years of experience in full stack web development and
-            solution architecture. Passion for solving complex problems and building scalable,
-            maintainable, and secure software and a history of delivering high quality solutions for
-            clients and employers. Experience working with agencies and startups across a broad
-            range of industries and business domains. Strong knowledge of general systems science
-            and engineering, including data modeling, analysis, and machine learning.
+            Skilled computer engineer with 20 years of experience in full stack
+            web development and solution architecture. Passion for solving
+            complex problems and building scalable, maintainable, and secure
+            software and a history of delivering high quality solutions for
+            clients and employers. Experience working with agencies and startups
+            across a broad range of industries and business domains. Strong
+            knowledge of general systems science and engineering, including data
+            modeling, analysis, and machine learning.
           </p>
         </section>
         <!-- Work experience in [ Who (Role) > Where (Project/Domain) > What (Technology) ] format -->
         <section class="work-experience">
           <h3>Work Experience</h3>
+          <div>
+            <h4>
+              Allstar.gg
+              <span class="period">2023 - Present</span>
+              <span class="location">New York City</span>
+            </h4>
+            <span class="title">Senior Software Developer and Solutions Architect</span>
+            <ul>
+              <li>
+                Developed an automated pipeline for creating personalized video game highlights for social media using MongoDB, Node, and FFMpeg.
+              </li>
+              <li>
+                Designed MongoDB aggregation pipelines and fast data processing large amounts of exported JSON data.
+              </li>
+              <li>
+                Collaborated to build a Federated GraphQL API integrating a legacy monolith subgraph with new microservice subgraphs.
+              </li>
+              <li>
+                Designed and built federated subgraph interface to a NodeJS microservice for a Neo4J database graph of game and social data.
+              </li>
+              <li>
+                Implemented NATS message broker system to facilitate real-time communication between microservices in the federated architecture.
+              </li>
+              <li>
+                Developed a Ruby-based notification microservice connecting NATS / Jetstream to a 3rd party notification system (Novu).
+              </li>
+            </ul>
+          </div>
           <div>
             <h4>
               Halo Media
@@ -65,26 +91,30 @@
             <span class="title">Solutions Architect and Technical Lead</span>
             <ul>
               <li>
-                Architected and developed platform for managing legal contract templates and workflows
-                for merging data to generate contracts using Angular, NestJS, MongoDB, and S3.
+                Architect and develop platform for managing legal contract
+                templates and workflows for merging data to generate contracts
+                using Angular, NestJS, MongoDB, and S3.
               </li>
               <li>
-                Designed and built system for managing legal template variables specifying global
-                default values, and default values based on region, language, and line-of-business
-                using Angular, NestJs, and MongoDB.
+                Design and build system for managing legal template variables
+                specifying global default values, and default values based on
+                region, language, and line-of-business using Angular, NestJs,
+                and MongoDB.
               </li>
               <li>
-                Architected Enhanced Document Service for managing documents, including legal
-                contracts, which are readily converted to different formats and hashed for
-                comparison.
+                Architect Enhanced Document Service for managing documents,
+                including legal contracts, which are readily converted to
+                different formats and hashed for comparison.
               </li>
               <li>
-                Built a COVID Vaccine Site Locator for large multinational client in India using
-                NestJS, AngularJS, and custom component library.
+                Build a COVID Vaccine Site Locator for large
+                multinational client in India using NestJS, AngularJS, and custom
+                component library.
               </li>
               <li>
-                Designed centralized Authorization system for multiple workflow applications and
-                Camunda orchestration system with Open Policy Agent.
+                Design centralized Authorization system for multiple workflow
+                applications and Camunda orchestration system with Open Policy
+                Agent.
               </li>
             </ul>
           </div>
@@ -97,38 +127,46 @@
             <span class="title">Lead Architect and Developer</span>
             <ul>
               <li>
-                Architected and built a scalable platform for managing millions of IoT identifiers and
-                hundreds of interaction rules for delivering customizable mobile user experiences in
-                retail, entertainment, and grocery locations using AngularJS, ExpressJS, and
-                MongoDB.
+                Architect and build a scalable platform for managing millions of IoT
+                identifiers and hundreds of interaction rules for delivering
+                customizable mobile user experiences in retail, entertainment,
+                and grocery locations using AngularJS, ExpressJS, and MongoDB.
               </li>
               <li>
-                Built reporting dashboards to present data gathered by the IoT platform for clients
-                to consume activity and engagement statistics using AngularJS, ExpressJS, and
-                MongoDB.
+                Built reporting dashboards to present data gathered by the IoT
+                platform for clients to consume activity and engagement
+                statistics using AngularJS, ExpressJS, and MongoDB.
               </li>
               <li>
-                Installed, integrated, and supported post-sale client IoT-based systems for enhancing
-                customer experience in retail, entertainment, and food service locations.
+                Installed, integrated, and supported post-sale client IoT-based
+                systems for enhancing customer experience in retail,
+                entertainment, and food service locations.
               </li>
               <li>
-                Designed and implemented an automated photo and video kiosk capture and delivery system
-                running NodeJS on raspberry pis with connected cameras QR code readers to boost
-                mobile engagement for retail brands.
+                Boosted mobile engagement by designing and implementing an
+                automated photo kiosk capture and delivery system, using NodeJS
+                on Raspberry Pis to interface with cameras and customers with QR
+                codes
               </li>
               <li>
-                Architected and developed an IoT routing platform managing interactions between
-                identifiers (BLE, NFC, QR) and user applications to power an Adidas NFC sneaker
-                campaign and Detroit Pistons BLE stadium integration.
+                Powered the Adidas NFC sneaker campaign and Detroit Pistons BLE
+                stadium integration by architecting and developing an IoT
+                Routing Platform managing interactions between identifiers (BLE,
+                NFC, QR) and user applications
               </li>
               <li>
-                Designed and implemented an interactions data collection and business intelligence
-                dashboard with AngularJS, NodeJS, and MongoDB, allowing deep data processing of
-                in-store customer engagement patterns.
+                Developed and installed RPi wireless signal trackers at movie
+                theaters to drive custom display advertising
               </li>
               <li>
-                Designed and implemented mobile IoT provisioning applications using Ionic, allowing
-                clients to configure and manage programmable NFC and BLE tags.
+                Designed and implemented an interactions data collection and
+                analysis system in NodeJS and MongoDB, allowing deep data
+                processing of customer engagement patterns
+              </li>
+              <li>
+                Designed and implemented mobile applications using AngularJS and
+                Ionic, allowing clients to configure and manage their IoT
+                devices
               </li>
             </ul>
           </div>
@@ -141,18 +179,20 @@
             <span class="title">Chief Technology Officer</span>
             <ul>
               <li>
-                Co-founded a digital web development agency and manage a team of 5 developers, project
-                managers, and administrators to engineer and deliver rapid-prototype web
-                applications using Node and AngularJS.
+                Co-founded a digital web development agency and managed a team
+                of 5 developers, project managers, and administrators to
+                engineer and deliver rapid-prototype web applications using Node
+                and AngularJS
               </li>
               <li>
-                Built and negotiated contracts, statements of work, and project plans; acquire and
-                direct complex projects to transform business ideas into achievable plans for
-                high-yield MVPs.
+                Built and negotiated contracts, Statements of Work, and project
+                plans; acquired and directed complex projects to transform
+                business ideas into achievable plans for high-yield MVPs
               </li>
               <li>
-                Built and managed CMS-based websites using Wordpress and Shopify, allowing small
-                retail and service businesses to expand their marketing and sales operations online.
+                Built and managed CMS-based websites using Wordpress and
+                Shopify, allowing small retail and service businesses to expand
+                their marketing and sales operations online.
               </li>
             </ul>
           </div>
@@ -165,13 +205,14 @@
             <span class="title">Lead Full Stack Developer</span>
             <ul>
               <li>
-                Lead a 4 person development team to design and develop a B2B web service with jQuery
-                to allow businesses to build and embed surveys within their websites; an early
-                competitor to SurveyMonkey.
+                Led a development team to design and build a B2B web service
+                with jQuery/CanJS that allows businesses to build & embed
+                surveys within their websites; an early competitor to
+                SurveyMonkey
               </li>
               <li>
-                Migrated an experimental LithiumPHP codebase to the more familiar CakePHP to leverage
-                a larger developer community and hiring talent pool.
+                Migrated LithiumPHP codebase to CakePHP for a larger developer
+                community and talent hiring pool
               </li>
             </ul>
           </div>
@@ -182,10 +223,9 @@
             <h4>
               Stevens Institute of Technology
               <span class="location">Hoboken, NJ</span>
+              <span class="period">2001 - 2005</span>
             </h4>
-            <span class="title"
-              >Honors Graduate &ndash; Bachelor of Engineering in Computer Engineering</span
-            >
+            <span class="title">Honors Graduate, Bachelor of Engineering in Computer Engineering</span>
           </div>
         </section>
       </article>
@@ -203,79 +243,126 @@
               >
             </li>
             <li>
-              <a href="https://github.com/Gooseus/" target="_blank">Github/gooseus</a>
+              <a href="https://github.com/Gooseus/" target="_blank"
+                >Github/gooseus</a
+              >
             </li>
           </ul>
         </div>
-        <!-- Languages that I have experience in -->
-        <div class="skills">
-          <h3>Languages</h3>
-          <h4>Proficient</h4>
-          <ul>
-            <li>Typescript / Javascript</li>
-            <li>HTML / CSS</li>
-          </ul>
-          <h4>Familiar</h4>
-          <ul>
-            <li>Python</li>
-            <li>Nim</li>
-            <li>PHP</li>
-            <li>Perl</li>
-          </ul>
-          <h4>Acquainted</h4>
-          <ul>
-            <li>Elixir</li>
-            <li>Julia</li>
-            <li>R</li>
-            <li>Lisp</li>
-            <li>Forth</li>
-            <li>C++</li>
-          </ul>
-        </div>
-        <!-- Technologies that I have experience in -->
-        <div class="skills">
-          <h3>Technologies</h3>
-          <h4>Proficient</h4>
-          <ul>
-            <li>Angular</li>
-            <li>NestJS</li>
-            <li>ExpressJS</li>
-            <li>MongoDB</li>
-          </ul>
-          <h4>Familiar</h4>
-          <ul>
-            <li>React</li>
-            <li>VueJS</li>
-            <li>Redis</li>
-            <li>Neo4j</li>
-            <li>Postgres</li>
-          </ul>
+        <!-- Revised Technical Skills section -->
+        <div class="skills-container">
+          <h3>Technical Expertise</h3>
+          
+          <div class="skill-category">
+            <h4>Core Competencies</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">React + NextJS</span>
+              <span class="skill-tag">Angular + NestJS</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">HTML + CSS</span>
+              <span class="skill-tag">GraphQL + Federation</span>
+              <span class="skill-tag">Ruby + Rails</span>
+              <span class="skill-tag">NodeJS</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">NATS</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">SQL + Postgres</span>
+              <span class="skill-tag">Cypher + Neo4J</span>
+              <span class="skill-tag">FFMpeg</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Cloudflare</span>
+              <span class="skill-tag">Github Actions</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Working Knowledge</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Elixir</span>
+              <span class="skill-tag">Nim</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">C# + .NET</span>
+              <span class="skill-tag">Perl</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Kubernetes</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Academic Experience</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Julia</span>
+              <span class="skill-tag">R</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">Lisp</span>
+              <span class="skill-tag">Forth</span>
+            </div>
+          </div>
         </div>
       </aside>
     </main>
-    <!-- Calendly badge widget begin -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-    <script
-      src="https://assets.calendly.com/assets/external/widget.js"
-      type="text/javascript"
-      async></script>
-    <script type="text/javascript">
-      window.onload = function () {
-        Calendly.initBadgeWidget({
-          url: "https://calendly.com/gooseus",
-          text: "Schedule time with me",
-          color: "#0069ff",
-          textColor: "#ffffff",
-          branding: true,
-        });
-      };
-    </script>
-    <!-- Calendly badge widget end -->
     <script>
-      // side-note
-      document
-        .querySelectorAll(".side-note")
-        .forEach((el) => el.addEventListener("click", openToolTip));
+      // Print layout adjustment specifically for page break issues
+      window.addEventListener('beforeprint', function() {
+        // Get key elements
+        const summary = document.querySelector('.summary');
+        const workExperience = document.querySelector('.work-experience');
+        const firstJob = workExperience.querySelector('div:first-child');
+        const secondJob = workExperience.querySelector('div:nth-child(2)');
+        
+        // Force summary to not break
+        summary.style.pageBreakAfter = 'avoid';
+        summary.style.pageBreakInside = 'avoid';
+        
+        // Force work experience to start on first page
+        workExperience.style.pageBreakBefore = 'auto';
+        
+        // Force work experience title and first job to stay together
+        workExperience.querySelector('h3').style.pageBreakAfter = 'avoid';
+        
+        // Force first job to stay on first page
+        firstJob.style.pageBreakBefore = 'auto';
+        firstJob.style.pageBreakAfter = 'auto';
+        firstJob.style.pageBreakInside = 'avoid';
+        
+        // Force second job to start on second page
+        if (secondJob) {
+          secondJob.style.pageBreakBefore = 'always';
+        }
+        
+        // Reduce spacing to fit more on first page
+        document.querySelector('header').style.marginBottom = '5px';
+        summary.style.marginBottom = '5px';
+        summary.querySelector('h3').style.marginBottom = '5px';
+        summary.querySelector('p').style.marginBottom = '5px';
+        workExperience.style.marginTop = '5px';
+        workExperience.querySelector('h3').style.marginBottom = '5px';
+        
+        // Compact first job
+        firstJob.style.padding = '0';
+        firstJob.style.marginTop = '5px';
+        firstJob.style.marginBottom = '0';
+        
+        // Reduce font sizes
+        summary.querySelector('p').style.fontSize = '9pt';
+        summary.querySelector('p').style.lineHeight = '1.2';
+        
+        // Make list items in first job smaller
+        firstJob.querySelectorAll('li').forEach(li => {
+          li.style.fontSize = '8pt';
+          li.style.lineHeight = '1.1';
+          li.style.marginBottom = '1px';
+        });
+      });
+      
+      window.addEventListener('afterprint', function() {
+        // Reset all inline styles
+        document.querySelectorAll('*').forEach(el => {
+          el.style = '';
+        });
+      });
     </script>
   </body>
 </html>
