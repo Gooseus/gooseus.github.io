@@ -25,7 +25,7 @@ const APPS = {
         return `Started timer in mode: ${mode}`;
     },
     roll: (dice = "1d20") => {
-        const [count, sides] = dice.split("d").map((n) => parseInt(n));
+        const [count, sides] = dice.split("d").map(n => parseInt(n));
         const rolls = [];
         for (let i = 0; i < count; i++) {
             rolls.push(Math.ceil(Math.random() * sides));
@@ -55,7 +55,8 @@ const HELP_MESSAGE = `<pre>
 <b>set</b> [attr] [value] - set an attribute value on the document body
 <b>get</b> [attr] - get an attribute value from the document body
 </pre>`;
-const msgNext = (next, message, log) => (log && console.log(log), { message, next, timestamp: new Date().toLocaleString() });
+const msgNext = (next, message, log) => (log && console.log(log),
+    { message, next, timestamp: new Date().toLocaleString() });
 // Interpreter commands
 const COMMANDS = {
     help: () => HELP_MESSAGE,
@@ -68,9 +69,9 @@ const COMMANDS = {
         else
             return msgNext("error", `Cannot start unknown app: ${app}`);
     },
-    stop: (app) => {
+    stop: app => {
         console.log('Stopping "app":', app);
-        const appIndex = runningApps.findIndex((a) => a.name === app);
+        const appIndex = runningApps.findIndex(a => a.name === app);
         if (appIndex > -1) {
             clearInterval(runningApps[appIndex].interval);
             runningApps.splice(appIndex, 1);
@@ -79,7 +80,7 @@ const COMMANDS = {
         else
             return msgNext("error", `Cannot stop unknown app: ${app}`);
     },
-    goto: (link) => {
+    goto: link => {
         if (LINKS[link]) {
             location.href = LINKS[link];
             return `Going to ${location.href}`;
@@ -116,17 +117,23 @@ export const commandConsoleInterpreter = (message, ...args) => {
 };
 // Command Console Template
 export const createCommandConsoleTemplate = (consoleId, inputId, outputId, store, handleKeyup) => {
-    return html `<div id="${consoleId}" class="${() => store.mode}">
-    <div>Terminal: ${() => store.test}</div>
-    <ul id="${outputId}">
-      ${() => store.output.map((line) => html `<li class="${line.type}">
-            <span class="timestamp">${line.timestamp}</span>
-            ${line.display}
-          </li>`)}
-    </ul>
-    <div id="prompt">
-      <input autocomplete="off" id="${inputId}" type="text" @keyup="${handleKeyup}" />
-    </div>
-  </div>`;
+    return html `<div
+  id="${consoleId}"
+  class="${() => store.mode}">
+  <h5>Test: ${() => store.test}</h5>
+  <ul id="${outputId}">
+    ${() => store.output.map(line => html `<li class="${line.type}">
+          <span class="timestamp">${line.timestamp}</span>
+          ${line.display}
+        </li>`)}
+  </ul>
+  <div id="prompt">
+    <input
+      autocomplete="off"
+      id="${inputId}"
+      type="text"
+      @keyup="${handleKeyup}" />
+  </div>
+</div>`;
 };
 //# sourceMappingURL=index.js.map

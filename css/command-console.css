@@ -3,7 +3,7 @@
   background-color: #000;
   color: #fff;
   font-family: monospace;
-  /* font-size: 1.2em; */
+  font-size: 1.2em;
   opacity: 0.8;
 
   position: absolute;
@@ -12,7 +12,6 @@
   box-sizing: border-box;
   width: 100%;
   padding: 1em;
-  padding-top: .5em;
 }
 
 #terminal ul {
@@ -57,7 +56,6 @@
 #prompt input {
   background-color: transparent;
   font-family: 'Andale Mono', 'Courier New', Courier, monospace;
-  font-size: 1em;
   color: inherit;
   border: none;
   width: 90%;

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Personal website of Shawn Marincas (Gooseus), a software engineer with interests in philosophy, politics, law, math, and general systems.">
     
-    <title>Goose.us | Projects</title>
+    <title>Goose.us | Reading</title>
 
     <link rel="icon" href="/favicon.png" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,11 +27,11 @@
       <h1 class=""><a href="/">Goose.us</a></h1>
       <nav>
         
-        <a class="active" href="/projects/"
+        <a class="inactive" href="/projects/"
           >Projects</a
         >
         
-        <a class="inactive" href="/reading/"
+        <a class="active" href="/reading/"
           >Reading</a
         >
         
@@ -46,12 +46,8 @@
       </nav>
     </header>
     <main>
-      <h2><a href="/projects/">Projects</a></h2>
-      <article><h3>Hexadecimal Diceware</h3>
-<p>This is a tool which allows you to implement physical passphrase generation using super-charged <a href="https://theworld.com/~reinhold/diceware.html" target="_blank">Diceware</a> method that uses 4 hexadecimal digits (or non-ordinary <a href="https://www.thediceshoponline.com/impact-opaque-hexidice-d16-hexadecimal-dice" target="_blank">16-sided hexadecimal dice</a>) to choose word from a list of 65,536 words.</p>
-<p>Most dictionaries don't have that many words, I use a real word list as an input to <a href="https://www.npmjs.com/package/gibrish">Gibrish</a>, a Markov chain word generator, which then generates a list of 65,536 real and fake words.</p>
-<p>The word list is then used to generate a 32 page book containing all 65,536 words laid out for easy lookup given 4 hexadecimal digits.  You can then generate a super-secure passphrase by rolling 4 hexadecimal dice and looking up the word in the book repeatedly until you have a passphrase of the desired length. Or, if you trust the pseudo-randomness of your machine, you can use the <code>uuidgen</code> utility to generate a random 32 character hexadecimal string which can be used to look up 8 words for a passphrase – which is the <a href="https://security.stackexchange.com/a/257535">128 bits of entropy recommended by some information security professionals</a>.</p>
-<p>More to come…</p>
+      <h2><a href="/reading/">Reading</a></h2>
+      <article><h2>Insurrection</h2>
 </article>
     </main>
     <footer>

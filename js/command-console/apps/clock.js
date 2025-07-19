@@ -1,6 +1,6 @@
 import { reactive, html } from "../../../js/arrow.js";
 const pad = (n, p = "0") => n.toString().padStart(2, p);
-const makeTimeFormat = (method) => date => pad(date[method]());
+const makeTimeFormat = (method) => date => pad(date[method]);
 const timeFormats = [
     makeTimeFormat("getHours"),
     makeTimeFormat("getMinutes"),
@@ -14,10 +14,7 @@ const update = store => () => {
 export const Clock = (mode = "default", opts) => {
     const clockStore = reactive({ display: "00:00:00", mode, ...opts });
     const attachClock = html `<div id="clock">
-    <div id="clock-display">
-      Current time:<br />
-      ${() => clockStore.display}
-    </div>
+    <div id="clock-display">${() => clockStore.display}</div>
   </div>`;
     const startClock = (element, mode_override) => {
         if (mode_override)
