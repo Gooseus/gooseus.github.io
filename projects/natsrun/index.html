@@ -1,0 +1,118 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website of Shawn Marincas (Gooseus), a software engineer with interests in philosophy, politics, law, math, and general systems.">
+    
+    <title>Goose.us | Projects</title>
+
+    <link rel="icon" href="/favicon.png" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/main.css" />
+    <script type="module" src="/js/bundle.js"></script>
+  </head>
+  <body>
+    <div id="apps"></div>
+    <header>
+      <h1 class=""><a href="/">Goose.us</a></h1>
+      <nav>
+        
+        <a class="active" href="/projects/"
+          >Projects</a
+        >
+        
+        <a class="inactive" href="/thoughts/"
+          >Thoughts</a
+        >
+        
+        <a class="inactive" href="/resume/"
+          >Resume</a
+        >
+        
+      </nav>
+    </header>
+    <main>
+      <h2><a href="/projects/">Projects</a></h2>
+      <article><p><a href="https://github.com/Gooseus/natsrun" target="_blank">NATSrun</a> is a lightweight TypeScript library that provides Express/Koa-like routing capabilities for NATS messages. It uses pattern matching to route messages to appropriate handlers based on NATS subjects, making it easy to build microservices with clean, maintainable code.</p>
+<h2>Features</h2>
+<ul>
+<li><strong>Pattern-based message routing</strong> - Uses NATS subject patterns (<code>user.*</code>, <code>user.&gt;</code>) to route messages to appropriate handlers</li>
+<li><strong>Multiple handler support</strong> - Multiple handlers can be registered for the same subject pattern</li>
+<li><strong>Async/await support</strong> - Full support for modern async JavaScript patterns</li>
+<li><strong>Configurable handler sorting</strong> - Three different sorting strategies: specificity, insertion order, or custom</li>
+<li><strong>Zero dependencies</strong> - No external runtime dependencies (except TypeScript)</li>
+<li><strong>TypeScript-first design</strong> - Built with TypeScript for full type safety</li>
+</ul>
+<h2>Technical Approach</h2>
+<p>The library implements a pattern-matching router similar to Express.js but designed specifically for NATS messaging patterns. It supports:</p>
+<ul>
+<li><code>*</code> wildcard matching for single tokens (<code>user.*</code> matches <code>user.created</code>, <code>user.updated</code>)</li>
+<li><code>&gt;</code> wildcard matching for multiple tokens (<code>user.&gt;</code> matches <code>user.123.profile.updated</code>)</li>
+<li>Exact subject matching with precedence over wildcards</li>
+<li>Middleware-style handler chaining with context passing</li>
+</ul>
+<h2>Installation &amp; Usage</h2>
+<p>Available on <a href="https://www.npmjs.com/package/@gooseus/natsrun" target="_blank">NPM</a> as <code>@gooseus/natsrun</code>:</p>
+<pre><code class="language-bash">npm install @gooseus/natsrun
+</code></pre>
+<p>Basic usage example:</p>
+<pre><code class="language-typescript">import { NatsRun } from '@gooseus/natsrun';
+
+const router = new NatsRun();
+
+// Add handlers for different subjects
+router.add('user.created', async (msg, ctx, next) =&gt; {
+  console.log('New user created:', msg);
+  await next({ userId: msg.data.id });
+});
+
+router.add('user.*.updated', async (msg, ctx, next) =&gt; {
+  console.log(`User updated:`, msg);
+});
+
+// Handle incoming messages
+await router.handle('user.created', { id: 1, name: 'John' });
+</code></pre>
+<h2>Development Context</h2>
+<p>This project was created to solve the challenge of building scalable microservices with NATS messaging. While NATS provides excellent messaging capabilities, there wasn't a good pattern-matching router for TypeScript/Node.js applications that felt as natural as Express.js routing.</p>
+<p>The library draws inspiration from other pattern-matching libraries like bloomrun and patrun, but is specifically optimized for NATS subject patterns and TypeScript development workflows.</p>
+<p><strong>Technologies</strong>: TypeScript, Node.js, NATS messaging, Pattern matching</p>
+<p><strong>Links</strong>: <a href="https://github.com/Gooseus/natsrun" target="_blank">GitHub Repository</a> | <a href="https://www.npmjs.com/package/@gooseus/natsrun" target="_blank">NPM Package</a></p>
+</article>
+    </main>
+    <footer>
+      
+      <div class="licenses">
+        <p class="license">
+          <span>Page content is licensed under <a rel="license" href="/files/licenses/by-nc-nd-4.0.txt" target="_blank">CC BY-NC-ND 4.0</a>.</span>
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"
+            ><img
+              alt="Creative Commons License"
+              src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a >
+        </p>
+        <p class="license">
+          <span>Site source and example code is licensed under <a rel="license" target="_blank" href="/LICENSE">MIT</a>.</span>
+        </p>
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

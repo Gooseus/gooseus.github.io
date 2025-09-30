@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Personal website of Shawn Marincas (Gooseus), a software engineer with interests in philosophy, politics, law, math, and general systems.">
     
-    <title>Goose.us | Writing</title>
+    <title>Goose.us | Thoughts</title>
 
     <link rel="icon" href="/favicon.png" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,11 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/main.css" />
-    
-    <link rel="stylesheet" href="/css/command-console.css" />
-     
-    <script type="module" src="/js/index.js"></script>
-    
+    <script type="module" src="/js/bundle.js"></script>
   </head>
   <body>
     <div id="apps"></div>
@@ -31,12 +27,8 @@
           >Projects</a
         >
         
-        <a class="inactive" href="/reading/"
-          >Reading</a
-        >
-        
-        <a class="active" href="/writing/"
-          >Writing</a
+        <a class="active" href="/thoughts/"
+          >Thoughts</a
         >
         
         <a class="inactive" href="/resume/"
@@ -46,10 +38,11 @@
       </nav>
     </header>
     <main>
-      <h2><a href="/writing/">Writing</a></h2>
-      <article><h3>Complexity, Entropy, and a Purpose for Life</h3>
-<p>I wrote a short essay in 2018 on my previous blog about the relationship between complexity, entropy, and the purpose of life.</p>
-<p>As it's very important to me and my personal philosophy I'm going to have to find the time to update and publish again here.</p>
+      <h2><a href="/thoughts/">Thoughts</a></h2>
+      <article><p>Here are some things I've written:</p>
+<ul class="main-list">
+<li><a href="/thoughts/on-complexity-entropy-life-purpose/">Complexity, Entropy, and a Purpose for Life</a></li>
+</ul>
 </article>
     </main>
     <footer>
@@ -68,7 +61,6 @@
       </div>
     </footer>
     <script>
-      // Add smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();

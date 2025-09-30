@@ -37,7 +37,7 @@ const APPS = {
 const LINKS = {
     projects: "/projects/",
     reviews: "/reviews/",
-    writing: "/writing/",
+    thoughts: "/thoughts/",
     about: "/about/",
     resume: "/resume/",
 };

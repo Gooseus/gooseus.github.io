@@ -15,11 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/main.css" />
-    
-    <link rel="stylesheet" href="/css/command-console.css" />
-     
-    <script type="module" src="/js/index.js"></script>
-    
+    <script type="module" src="/js/bundle.js"></script>
   </head>
   <body>
     <div id="apps"></div>
@@ -31,12 +27,8 @@
           >Projects</a
         >
         
-        <a class="inactive" href="/reading/"
-          >Reading</a
-        >
-        
-        <a class="inactive" href="/writing/"
-          >Writing</a
+        <a class="inactive" href="/thoughts/"
+          >Thoughts</a
         >
         
         <a class="inactive" href="/resume/"
@@ -49,6 +41,7 @@
       <h2><a href="/projects/">Projects</a></h2>
       <article><p>Here are some things I've (publically) worked on over the years:</p>
 <ul class="main-list">
+<li><a href="/projects/natsrun/">NATSrun</a> - A lightweight <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> library that provides Express/Koa-like routing capabilities for <a href="https://nats.io/" target="_blank">NATS</a> messages using pattern matching.</li>
 <li><a href="/projects/nim-aws/">NimAWS</a> - A <a href="https://nim-lang.org/" target="_blank">Nim</a> client library for AWS, specifically S3, that was built to upload images from raspberry pi camera kiosks.</li>
 <li><a href="/projects/hexadecimal-diceware/">Hexadecimal Diceware</a> - Hexadecimal <a href="https://en.wikipedia.org/wiki/Diceware" target="_blank">diceware</a> word list/book and passphrase generator.</li>
 <li><a href="/projects/occam-ra-d3/">Occam-RA-D3</a> - A simple <a href="https://d3js.org/" target="_blank">D3</a> pairwise data model explorer based on <a href="http://dmit.sysc.pdx.edu/" target="_blank">Occam DMM</a> and <a href="https://pdxscholar.library.pdx.edu/cgi/viewcontent.cgi?article=1022">Reconstructability Analysis</a>.</li>
@@ -73,7 +66,6 @@
       </div>
     </footer>
     <script>
-      // Add smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
