@@ -42,10 +42,12 @@ html {
 }
 
 body {
-  width: 940px;
+  max-width: 940px;
+  width: 100%;
   margin: 0 auto;
   line-height: 1.6em;
-  padding-top: 36px;
+  padding: 36px 16px 0 16px;
+  box-sizing: border-box;
 }
 
 /*------------------------------------*

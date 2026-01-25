@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Personal website of Shawn Marincas (Gooseus), a software engineer with interests in philosophy, politics, law, math, and general systems.">
     
-    <title>Goose.us | Thoughts</title>
+    <title>Goose.us | Projects</title>
 
     <link rel="icon" href="/favicon.png" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
       <h1 class=""><a href="/">Goose.us</a></h1>
       <nav>
         
-        <a class="inactive" href="/projects/"
+        <a class="active" href="/projects/"
           >Projects</a
         >
         
@@ -35,12 +35,27 @@
     </header>
     <main>
       
-      <h2><a href="">Thoughts</a></h2>
+      <h2><a href="/projects/">Projects</a></h2>
       
-      <article><p>Here are some things I've written:</p>
-<ul class="main-list">
-<li><a href="/thoughts/on-complexity-entropy-life-purpose/">Complexity, Entropy, and a Purpose for Life</a></li>
+      <article><h3>Ham Hero</h3>
+<p>A retro-style arcade game for learning Morse code. Players operate a radio to defuse bombs by transmitting correct Morse code sequences before they hit the ground.</p>
+<h2>Game Modes</h2>
+<ul>
+<li>Learning Mode: repeat displayed dots and dashes</li>
+<li>Normal Mode: translate letters to Morse code</li>
+<li>Advanced Mode: handle words and prosigns</li>
+<li>Call/Response Mode: decode audio then transmit responses</li>
 </ul>
+<h2>How to Play</h2>
+<p>Bombs descend with Morse code patterns. Match the sequences to defuse them before they impact. Difficulty increases as you progress through levels.</p>
+<p>Controls:</p>
+<ul>
+<li>Spacebar or click/tap: hold to transmit (short press = dot, long press = dash)</li>
+<li>ESC: pause or return to menu</li>
+</ul>
+<h2>Technical Details</h2>
+<p>Built with React and Vite. Uses Web Audio API for tone generation and Canvas for graphics. Follows ITU-R M.1677-1 Morse code timing specifications.</p>
+<p><a href="https://github.com/Gooseus/ham-hero" target="_blank">GitHub</a> | <a href="/ham-hero/">Play</a></p>
 </article>
     </main>
     <footer>

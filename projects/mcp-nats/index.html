@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Personal website of Shawn Marincas (Gooseus), a software engineer with interests in philosophy, politics, law, math, and general systems.">
     
-    <title>Goose.us | Thoughts</title>
+    <title>Goose.us | Projects</title>
 
     <link rel="icon" href="/favicon.png" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
       <h1 class=""><a href="/">Goose.us</a></h1>
       <nav>
         
-        <a class="inactive" href="/projects/"
+        <a class="active" href="/projects/"
           >Projects</a
         >
         
@@ -35,12 +35,36 @@
     </header>
     <main>
       
-      <h2><a href="">Thoughts</a></h2>
+      <h2><a href="/projects/">Projects</a></h2>
       
-      <article><p>Here are some things I've written:</p>
-<ul class="main-list">
-<li><a href="/thoughts/on-complexity-entropy-life-purpose/">Complexity, Entropy, and a Purpose for Life</a></li>
+      <article><h3>mcp-nats</h3>
+<p>A Model Context Protocol (MCP) server that connects AI assistants like Claude to NATS messaging infrastructure. Enables LLMs to interact with distributed messaging systems through a unified interface.</p>
+<h2>Features</h2>
+<ul>
+<li>Core messaging: publish, subscribe, and request-reply patterns</li>
+<li>JetStream support: stream and consumer management with persistence</li>
+<li>Data storage: key-value and object store operations</li>
+<li>Real-time subscriptions with configurable timeouts</li>
+<li>Built-in NATS documentation access</li>
+<li>Multiple transport options: stdio or HTTP/SSE</li>
 </ul>
+<h2>Installation</h2>
+<p>Quick execution via npx:</p>
+<pre><code class="language-bash">npx @gooseus/mcp-nats
+</code></pre>
+<p>Or install globally:</p>
+<pre><code class="language-bash">npm install -g @gooseus/mcp-nats
+</code></pre>
+<h2>Configuration</h2>
+<p>Connection settings use environment variables:</p>
+<ul>
+<li><code>NATS_URL</code> - NATS server URL</li>
+<li><code>NATS_USER</code> / <code>NATS_PASS</code> - Authentication credentials</li>
+<li><code>NATS_TOKEN</code> - Token-based auth</li>
+<li><code>NATS_CREDS_PATH</code> - Path to credentials file</li>
+</ul>
+<p>Requires Node.js 20+ and a NATS server with JetStream enabled.</p>
+<p><a href="https://github.com/Gooseus/mcp-nats" target="_blank">GitHub</a></p>
 </article>
     </main>
     <footer>

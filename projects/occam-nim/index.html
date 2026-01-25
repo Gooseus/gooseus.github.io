@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Personal website of Shawn Marincas (Gooseus), a software engineer with interests in philosophy, politics, law, math, and general systems.">
     
-    <title>Goose.us | Thoughts</title>
+    <title>Goose.us | Projects</title>
 
     <link rel="icon" href="/favicon.png" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
       <h1 class=""><a href="/">Goose.us</a></h1>
       <nav>
         
-        <a class="inactive" href="/projects/"
+        <a class="active" href="/projects/"
           >Projects</a
         >
         
@@ -35,12 +35,38 @@
     </header>
     <main>
       
-      <h2><a href="">Thoughts</a></h2>
+      <h2><a href="/projects/">Projects</a></h2>
       
-      <article><p>Here are some things I've written:</p>
-<ul class="main-list">
-<li><a href="/thoughts/on-complexity-entropy-life-purpose/">Complexity, Entropy, and a Purpose for Life</a></li>
+      <article><h3>occam-nim</h3>
+<p>A Nim 2.x implementation of OCCAM (Organizational Complexity Computation and Modeling), a Reconstructability Analysis (RA) tool for discovering structure in categorical datasets using information theory and graph theory.</p>
+<h2>What is Reconstructability Analysis?</h2>
+<p>RA is a discrete multivariate modeling approach that identifies which variables are related, which are independent, and their combined predictive power. It embodies Occam's Razor by searching for the simplest model that captures important data relationships—useful for exploratory analysis, feature selection, structure discovery, and interpretable modeling.</p>
+<h2>Features</h2>
+<ul>
+<li>Model fitting: entropy, transmission, degrees of freedom, likelihood ratio, AIC, BIC</li>
+<li>Search algorithms: loopless, full, disjoint, and chain strategies with parallel execution</li>
+<li>Decomposable models: exact inference via junction tree and belief propagation</li>
+<li>Loop models: Iterative Proportional Fitting (IPF) for non-decomposable structures</li>
+<li>Directed systems: conditional entropy, confusion matrix, prediction accuracy</li>
+<li>Multiple interfaces: library API, CLI tool, web server, and MCP server</li>
 </ul>
+<h2>Installation</h2>
+<p>As a Nim library:</p>
+<pre><code class="language-bash">nimble install occam
+</code></pre>
+<p>From source:</p>
+<pre><code class="language-bash">git clone https://github.com/Gooseus/occam-nim
+cd occam-nim
+nimble install -d
+nimble test
+</code></pre>
+<h2>Usage</h2>
+<p>CLI for CSV analysis:</p>
+<pre><code class="language-bash">./bin/cli analyze-csv -i data.csv
+./bin/cli search -i data.json --direction up --width 5
+</code></pre>
+<p>Note: This is a work in progress. Core library and CLI are functional and validated against original OCCAM, but APIs may change before v1.0.</p>
+<p><a href="https://github.com/Gooseus/occam-nim" target="_blank">GitHub</a></p>
 </article>
     </main>
     <footer>

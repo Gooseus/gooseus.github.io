@@ -12,12 +12,12 @@
     <link rel="icon" href="/favicon.png" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/main.css" />
     <script type="module" src="/js/bundle.js"></script>
   </head>
-  <body>
+  <body class="">
     <div id="apps"></div>
     <header>
       <h1 class=""><a href="/">Goose.us</a></h1>
@@ -34,16 +34,29 @@
       </nav>
     </header>
     <main>
+      
       <h2><a href="/projects/">Projects</a></h2>
-      <article><p>Here are some things I've (publically) worked on over the years:</p>
-<ul class="main-list">
-<li><a href="/projects/natsrun/">NATSrun</a> - A lightweight <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> library that provides Express/Koa-like routing capabilities for <a href="https://nats.io/" target="_blank">NATS</a> messages using pattern matching.</li>
-<li><a href="/projects/nim-aws/">NimAWS</a> - A <a href="https://nim-lang.org/" target="_blank">Nim</a> client library for AWS, specifically S3, that was built to upload images from raspberry pi camera kiosks.</li>
-<li><a href="/projects/hexadecimal-diceware/">Hexadecimal Diceware</a> - Hexadecimal <a href="https://en.wikipedia.org/wiki/Diceware" target="_blank">diceware</a> word list/book and passphrase generator.</li>
-<li><a href="/projects/occam-ra-d3/">Occam-RA-D3</a> - A simple <a href="https://d3js.org/" target="_blank">D3</a> pairwise data model explorer based on <a href="http://dmit.sysc.pdx.edu/" target="_blank">Occam DMM</a> and <a href="https://pdxscholar.library.pdx.edu/cgi/viewcontent.cgi?article=1022">Reconstructability Analysis</a>.</li>
-<li><a href="/projects/consecutive-prime-number-residue-ra/">Reconstructability Analysis with Prime Numbers</a> - Systems Science graduate school project that was to be my Master's thesis &quot;Reducing Uncertainty in Consecutive Prime Residue Classes with Reconstructability Analysis&quot;… before COVID.</li>
-</ul>
-<p>Many of these are still in progress, and at the very least I'll be adding more information as I dig up more notes and hopefully get some demos working on this site.</p>
+      
+      <article><p>Open source projects I've built:</p>
+<h3>NATSrun</h3>
+<p>A lightweight TypeScript library that provides Express/Koa-like routing for NATS messages. Uses pattern matching to route messages to handlers based on NATS subjects, making it easy to build microservices with clean, maintainable code.</p>
+<p><a href="https://github.com/Gooseus/natsrun" target="_blank">GitHub</a> | <a href="https://www.npmjs.com/package/@gooseus/natsrun" target="_blank">npm</a> | <a href="/projects/natsrun/">Details</a></p>
+<hr>
+<h3>mcp-nats</h3>
+<p>MCP (Model Context Protocol) server and tools for working with NATS and Jetstream setups. Enables AI assistants to interact with NATS messaging infrastructure.</p>
+<p><a href="https://github.com/Gooseus/mcp-nats" target="_blank">GitHub</a> | <a href="/projects/mcp-nats/">Details</a></p>
+<hr>
+<h3>occam-nim</h3>
+<p>A Nim 2.x implementation of OCCAM (Organizational Complexity Computation and Modeling), an open-source Reconstructability Analysis tool built Portland State University Systems Science program. Reconstructability Analysis is an information-theoretic method for analyzing complex systems.</p>
+<p><a href="https://github.com/Gooseus/occam-nim" target="_blank">GitHub</a> | <a href="/projects/occam-nim/">Details</a> | <a href="https://github.com/occam-ra/occam">Original Project Github</a></p>
+<hr>
+<h3>Ham Hero</h3>
+<p>A web arcade game for learning Morse code. Built as a fun way to practice CW for amateur radio.</p>
+<p><a href="https://github.com/Gooseus/ham-hero" target="_blank">GitHub</a> | <a href="/ham-hero/">Play</a> | <a href="/projects/ham-hero/">Details</a></p>
+<hr>
+<h3>NimAWS</h3>
+<p>A Nim client library for AWS S3, originally built to upload images from Raspberry Pi camera kiosks. My most popular GitHub repo with occasional pull requests from the Nim community.</p>
+<p><a href="https://github.com/Gooseus/nimaws" target="_blank">GitHub</a> | <a href="/projects/nim-aws/">Details</a></p>
 </article>
     </main>
     <footer>
