@@ -60,28 +60,19 @@
             <span class="title">Senior Backend Engineer and Solutions Architect</span>
             <ul>
               <li>
-                Led the migration of the platform's GraphQL API to managed federation, authoring the architecture RFC and building an Apollo Router with a JWT auth coprocessor, cross-subgraph entity composition with DataLoader batching, and CI schema checks using Apollo GraphOS, Rover, TypeScript, and AWS ECS Fargate.
+                Specified and implemented the platform's migration to Apollo managed federation, building an Apollo Router with a JWT auth coprocessor, cross-subgraph entity composition with DataLoader batching, and CI schema checks, and retiring the legacy gateway, using Apollo GraphOS, Rover, TypeScript, and AWS ECS Fargate.
               </li>
               <li>
-                Architected and delivered a HIPAA-compliant medical records extraction product spanning presigned PHI intake, a dedicated GraphQL subgraph, Kafka job events, org-scoped row-level security, and LLM agent tools using TypeScript, Python, PostgreSQL, AWS Lambda, S3/KMS, and Terraform.
+                Delivered a HIPAA-compliant medical records extraction product on the platform, spanning presigned PHI intake, a dedicated GraphQL subgraph, Kafka job events, org-scoped row-level security, and LLM agent tools using TypeScript, Python, PostgreSQL, AWS Lambda, S3/KMS, and Terraform.
               </li>
               <li>
-                Hardened an OCR and LLM document pipeline for real-world medical record sets approaching 1,900 pages by streaming PDF rendering to bound memory, bounding concurrency with throttle-aware retries, and guaranteeing run termination using Python, Azure Document Intelligence, and Docker.
+                Hardened the OCR and LLM extraction pipeline for real-world medical record sets approaching 1,900 pages by streaming PDF rendering to bound memory, bounding concurrency with throttle-aware retries, and guaranteeing run termination using Python, Azure Document Intelligence, and Docker.
               </li>
               <li>
-                Authored the RFC and led the port of the extraction service into the TypeScript monorepo, starting with a synthetic medical-record corpus with known answers and an evaluation harness to measure extraction accuracy before cutover.
+                Cut test-suite runtime on the production insurance comparison platform by about 20% for unit tests and 40% for end-to-end tests by introducing Playwright API seeding and cached authentication, and replaced brittle snapshot tests with targeted assertions using Jest, Playwright, and NestJS.
               </li>
               <li>
-                Designed the platform observability architecture (accepted RFC) and built its core packages, including shared OpenTelemetry metrics, an LLM client that tracks token usage and cost, an instrumented Postgres pool, and Kafka consumer-lag metrics surfaced in Grafana dashboards.
-              </li>
-              <li>
-                Diagnosed stranded deployments after a CI outage and restored convergence of database migrations and schema publishing to the deployed version using GitHub Actions and AWS ECS.
-              </li>
-              <li>
-                Led a test-suite modernization epic on the production insurance comparison platform, introducing Playwright API seeding and cached authentication and replacing snapshot tests with targeted assertions using Jest, Playwright, and NestJS.
-              </li>
-              <li>
-                Authored 10 architecture RFCs and proposals covering multi-tenant partitioning, a document-intake PHI perimeter, formal policy state machines, legacy data migration, and a BPMN process-orchestration pilot, backed by interactive simulators and working prototypes built with Camunda and XState.
+                Built shared observability packages, including OpenTelemetry metrics, an LLM client that tracks token usage and cost, an instrumented Postgres pool, and Kafka consumer-lag metrics surfaced in Grafana dashboards.
               </li>
             </ul>
           </div>
