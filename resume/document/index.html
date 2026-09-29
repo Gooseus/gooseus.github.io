@@ -43,6 +43,9 @@
             <li>
               Strong knowledge of general systems science and engineering, including data modeling, analysis, and machine learning.
             </li>
+            <li>
+              Recent focus on regulated domains (insurance, healthcare and PHI) and LLM document pipelines.
+            </li>
           </ul>
         </section>
         <!-- Work experience in [ Who (Role) > Where (Project/Domain) > What (Technology) ] format -->
@@ -50,8 +53,42 @@
           <h3>Experience</h3>
           <div>
             <h4>
+              LeopardAI
+              <span class="period">2026 - Present</span>
+              <span class="location">New York City</span>
+            </h4>
+            <span class="title">Senior Backend Engineer and Solutions Architect</span>
+            <ul>
+              <li>
+                Led the migration of the platform's GraphQL API to managed federation, authoring the architecture RFC and building an Apollo Router with a JWT auth coprocessor, cross-subgraph entity composition with DataLoader batching, and CI schema checks using Apollo GraphOS, Rover, TypeScript, and AWS ECS Fargate.
+              </li>
+              <li>
+                Architected and delivered a HIPAA-compliant medical records extraction product spanning presigned PHI intake, a dedicated GraphQL subgraph, Kafka job events, org-scoped row-level security, and LLM agent tools using TypeScript, Python, PostgreSQL, AWS Lambda, S3/KMS, and Terraform.
+              </li>
+              <li>
+                Hardened an OCR and LLM document pipeline for real-world medical record sets approaching 1,900 pages by streaming PDF rendering to bound memory, bounding concurrency with throttle-aware retries, and guaranteeing run termination using Python, Azure Document Intelligence, and Docker.
+              </li>
+              <li>
+                Authored the RFC and led the port of the extraction service into the TypeScript monorepo, starting with a synthetic medical-record corpus with known answers and an evaluation harness to measure extraction accuracy before cutover.
+              </li>
+              <li>
+                Designed the platform observability architecture (accepted RFC) and built its core packages, including shared OpenTelemetry metrics, an LLM client that tracks token usage and cost, an instrumented Postgres pool, and Kafka consumer-lag metrics surfaced in Grafana dashboards.
+              </li>
+              <li>
+                Diagnosed stranded deployments after a CI outage and restored convergence of database migrations and schema publishing to the deployed version using GitHub Actions and AWS ECS.
+              </li>
+              <li>
+                Led a test-suite modernization epic on the production insurance comparison platform, introducing Playwright API seeding and cached authentication and replacing snapshot tests with targeted assertions using Jest, Playwright, and NestJS.
+              </li>
+              <li>
+                Authored 10 architecture RFCs and proposals covering multi-tenant partitioning, a document-intake PHI perimeter, formal policy state machines, legacy data migration, and a BPMN process-orchestration pilot, backed by interactive simulators and working prototypes built with Camunda and XState.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>
               Allstar.gg
-              <span class="period">2023 - Present</span>
+              <span class="period">2023 - 2026</span>
               <span class="location">New York City</span>
             </h4>
             <span class="title">Senior Software Developer and Solutions Architect</span>
@@ -202,7 +239,7 @@
               <span class="location">Hoboken, NJ</span>
               <span class="period">2001 - 2005</span>
             </h4>
-            <span class="title">Honors Graduate, Bachelor of Engineering in Computer Engineering</span>
+            <span class="title">Honors Graduate, Bachelor of Engineering in Computer Engineering, Cooperative Education Program</span>
           </div>
         </section>
       </article>
@@ -212,6 +249,7 @@
           <!-- <h3>Links</h3> -->
           <ul>
             <li class="no-print"><a href="#" onclick="window.print();">Print Resume</a></li>
+            
             <li>
               <a href="https://linkedin.com/in/shawn-marincas/" target="_blank"
                 >Linkedin/shawn-marincas</a
@@ -256,6 +294,8 @@
               <span class="skill-tag">GraphQL</span>
               <span class="skill-tag">Apollo Federation</span>
               <span class="skill-tag">NATS-JetStream</span>
+              <span class="skill-tag">Kafka</span>
+              <span class="skill-tag">Apollo Router</span>
               <span class="skill-tag">AWS SQS</span>
               <span class="skill-tag">FCM</span>
               <span class="skill-tag">APNS</span>
@@ -268,11 +308,13 @@
               <span class="skill-tag">MongoDB</span>
               <span class="skill-tag">AtlasDB</span>
               <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Postgres RLS</span>
               <span class="skill-tag">AWS RDS</span>
               <span class="skill-tag">Neo4J</span>
               <span class="skill-tag">AuraDB</span>
               <span class="skill-tag">Redis</span>
               <span class="skill-tag">AWS S3</span>
+              <span class="skill-tag">AWS KMS</span>
               <span class="skill-tag">Cloudflare R2</span>
             </div>
           </div>
@@ -284,6 +326,9 @@
               <span class="skill-tag">Helm</span>
               <span class="skill-tag">AWS Lambda</span>
               <span class="skill-tag">AWS EKS</span>
+              <span class="skill-tag">AWS ECS Fargate</span>
+              <span class="skill-tag">Terraform</span>
+              <span class="skill-tag">OpenTelemetry</span>
               <span class="skill-tag">Prometheus</span>
               <span class="skill-tag">Grafana</span>
               <span class="skill-tag">Heroku</span>
@@ -307,6 +352,19 @@
               <span class="skill-tag">playwright</span>
               <span class="skill-tag">awk</span>
               <span class="skill-tag">mongosh</span>
+              <span class="skill-tag">rover</span>
+              <span class="skill-tag">nx</span>
+              <span class="skill-tag">vitest</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h4>AI / LLM</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Claude API</span>
+              <span class="skill-tag">Azure Document Intelligence</span>
+              <span class="skill-tag">LLM evaluation harnesses</span>
+              <span class="skill-tag">Token and cost instrumentation</span>
             </div>
           </div>
         </div>
